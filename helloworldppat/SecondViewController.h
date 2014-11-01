@@ -10,5 +10,7 @@
 
 @interface SecondViewController : UIViewController
 
+- (IBAction)cancelRequestCall:(id)sender;
+
 
 @end

@@ -47,34 +47,35 @@
 }
 
 
--(void)requestIsUrgent:(BOOL)urgency forUser:(NSString*)userID withRequest:(NSString*)request
+-(void)requestIsUrgent:(NSString*)urgency forUser:(NSString*)userID withRequest:(NSString*)request
 //-(void)sendrequest:(BOOL)urgency forUser:(NSString*)userID
 {
     // Create a reference to a Firebase location
     Firebase *myRootRef = [[Firebase alloc] initWithUrl:@"https://bostonhome.firebaseio.com/requests"];
     // Write data to Firebase
    // NSArray *persons = [NSArray arrayWithObjects:@"1","video","timestamp"];
-    Firebase *postRef;
-    if (urgency == true) {
-        postRef = [myRootRef childByAppendingPath: @"UrgentRequests"];
-    }
-    else {
-        postRef = [myRootRef childByAppendingPath: @"NonUrgentRequests"];
-    }
+
     
     NSTimeInterval timeInMiliseconds = [[NSDate date] timeIntervalSince1970];
   
     
     NSDictionary *post1 = @{
+                            @"isUrgent":urgency,
                             @"text": request,
                             @"timestamp":[NSString stringWithFormat:@"%f", timeInMiliseconds]
                             };
-    Firebase *post1Ref = [postRef childByAppendingPath: @"1"];
+    Firebase *post1Ref = [myRootRef childByAppendingPath: @"1"];
     [post1Ref setValue: post1];
     
    // NSString *postId = post1Ref.name;
     
     //[myRootRef childByAutoId:@"Do you have noms? You'll love Firebase."];
+
+}
+- (void)cancelRequestForUser:(NSString*)userID {
+    
+    Firebase *fb = [[Firebase alloc] initWithUrl:[NSString stringWithFormat:@"%@/%@", @"https://bostonhome.firebaseio.com/requests/", userID]];
+    [fb removeValue];
 }
 
 @end

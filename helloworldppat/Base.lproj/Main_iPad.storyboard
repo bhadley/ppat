@@ -179,6 +179,9 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="cancelRequestCall:" destination="O1G-am-VfI" eventType="touchUpInside" id="1FJ-fB-5tm"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hangup.png" translatesAutoresizingMaskIntoConstraints="NO" id="AFq-rL-rWD">
                                 <rect key="frame" x="313" y="636" width="111" height="76"/>
@@ -236,7 +239,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="urgentRequest:" destination="5TP-PH-v0z" eventType="touchUpInside" id="gD1-G7-3bk"/>
+                                    <action selector="urgentRequest:" destination="5TP-PH-v0z" eventType="touchUpInside" id="qBb-Ru-tpq"/>
                                     <segue destination="O1G-am-VfI" kind="push" id="RKE-RR-Fnd"/>
                                 </connections>
                             </button>
