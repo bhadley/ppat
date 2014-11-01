@@ -13,9 +13,9 @@
 
 - (IBAction)videoChat:(id)sender;
 
+- (IBAction)sendNurse:(id)sender;
 
-
-
+- (IBAction)bringWater:(id)sender;
 
 
 @end

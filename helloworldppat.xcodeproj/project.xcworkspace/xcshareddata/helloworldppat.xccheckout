@@ -10,14 +10,14 @@
 	<string>helloworldppat</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>3B163ED0907F6BD1B49F6EC077661B756292DA78</key>
+		<key>34B8735FA9486C7755285C09B4D137F0DB4628FC</key>
 		<string>https://github.com/ldaquila/ppat.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>helloworldppat.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>3B163ED0907F6BD1B49F6EC077661B756292DA78</key>
+		<key>34B8735FA9486C7755285C09B4D137F0DB4628FC</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
@@ -25,14 +25,14 @@
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>3B163ED0907F6BD1B49F6EC077661B756292DA78</string>
+	<string>34B8735FA9486C7755285C09B4D137F0DB4628FC</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>3B163ED0907F6BD1B49F6EC077661B756292DA78</string>
+			<string>34B8735FA9486C7755285C09B4D137F0DB4628FC</string>
 			<key>IDESourceControlWCCName</key>
 			<string>helloworldppat</string>
 		</dict>

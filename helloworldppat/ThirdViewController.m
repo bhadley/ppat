@@ -49,21 +49,19 @@
 */
 
 - (IBAction)videoChat:(id)sender {
-    
-    //static UIColor *color = [self colorWithHexString:@"FF8D71"];
-  
     NSLog(@"videoChat PRESSED");
     [self requestIsUrgent:false forUser:@"Margaret" withRequest:@"video"];
-
-    /*
-    [[NSUserDefaults standardUserDefaults] setObject:@"water" forKey:@"water"];
-    [[NSUserDefaults standardUserDefaults] synchronize ];
-     */
-    //pilosfile/core data
-
-    // Create a reference to a Firebase location
-    //Firebase *myRootRef = [[Firebase alloc] initWithUrl:@"https://bostonhome.firebaseio.com/"];
-    // Write data to Firebase
-    //[myRootRef setValue:@"Do you have data? You'll love Firebase."];
 }
+
+- (IBAction)sendNurse:(id)sender {
+    NSLog(@"sendNurse PRESSED");
+    [self requestIsUrgent:false forUser:@"Margaret" withRequest:@"Send a nurse"];
+}
+
+- (IBAction)bringWater:(id)sender {
+    NSLog(@"bringWater PRESSED");
+    [self requestIsUrgent:false forUser:@"Margaret" withRequest:@"Bring water"];
+}
+
+
 @end

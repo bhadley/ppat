@@ -10,4 +10,7 @@
 
 @interface ViewController : UIViewController
 
+
+- (IBAction)urgentRequest:(id)sender;
+
 @end

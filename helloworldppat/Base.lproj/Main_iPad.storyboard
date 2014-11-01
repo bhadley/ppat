@@ -85,6 +85,7 @@
                                     <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="sendNurse:" destination="UDj-k5-BQ0" eventType="touchUpInside" id="ziB-vp-ZCg"/>
                                     <segue destination="O1G-am-VfI" kind="push" id="HuW-qq-Fii"/>
                                 </connections>
                             </button>
@@ -97,6 +98,7 @@
                                     <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="bringWater:" destination="UDj-k5-BQ0" eventType="touchUpInside" id="maZ-En-KM1"/>
                                     <segue destination="O1G-am-VfI" kind="push" id="4Zl-uZ-T4O"/>
                                 </connections>
                             </button>
@@ -150,7 +152,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SvT-8n-Rfg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="925" y="-1887"/>
+            <point key="canvasLocation" x="1163" y="-1467"/>
         </scene>
         <!--Second View Controller-->
         <scene sceneID="O2r-kz-gNY">
@@ -234,6 +236,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="urgentRequest:" destination="5TP-PH-v0z" eventType="touchUpInside" id="gD1-G7-3bk"/>
                                     <segue destination="O1G-am-VfI" kind="push" id="RKE-RR-Fnd"/>
                                 </connections>
                             </button>
@@ -258,7 +261,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e9B-xt-0JW" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-274" y="-1835"/>
+            <point key="canvasLocation" x="-176" y="-1817"/>
         </scene>
         <!--Urgent Table View Controller-->
         <scene sceneID="gKh-dA-mrX">
@@ -359,6 +362,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="v3W-TU-Hl5"/>
+        <segue reference="RKE-RR-Fnd"/>
     </inferredMetricsTieBreakers>
 </document>

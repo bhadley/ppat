@@ -66,11 +66,10 @@
   
     
     NSDictionary *post1 = @{
-                            @"userID": userID,
                             @"text": request,
                             @"timestamp":[NSString stringWithFormat:@"%f", timeInMiliseconds]
                             };
-    Firebase *post1Ref = [postRef childByAutoId];
+    Firebase *post1Ref = [postRef childByAppendingPath: @"1"];
     [post1Ref setValue: post1];
     
    // NSString *postId = post1Ref.name;

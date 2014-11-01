@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "helloworldppat/ThirdViewController.m"
-            timestampString = "436549752.601135"
+            timestampString = "436555226.693611"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
             landmarkName = "-videoChat:"
             landmarkType = "5">
          </BreakpointContent>

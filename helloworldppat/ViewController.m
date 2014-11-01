@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-
+#import "utils.h"
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *label;
 @property (weak, nonatomic) IBOutlet UIButton *button;
@@ -16,27 +16,11 @@
 
 @implementation ViewController
 
-- (IBAction)didSelectGoButton:(id)sender {
-    self.label.text = @"hello";
+- (IBAction)urgentRequest:(id)sender {
+    NSLog(@"urgentRequest");
+    [self requestIsUrgent:true forUser:@"Margaret" withRequest:@"video"];
 }
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-}
 
--(void)viewDidAppear:(BOOL)animated
-{/*
-    NSString* stringWater = [[NSUserDefaults standardUserDefaults] stringForKey:@"water"];
-    
-    NSLog(@"The button alled %@",stringWater);*/
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 @end
