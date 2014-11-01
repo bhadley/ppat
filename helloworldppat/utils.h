@@ -9,6 +9,6 @@
 @interface UIViewController(utils)
 
 -(UIColor*)colorWithHexString:(NSString*)hex;
--(void)requestIsUrgent:(NSString*)urgency forUser:(NSString*)userID withRequest:(NSString*)request;
+-(void)requestIsUrgent:(NSString*)urgency forUserID:(NSString*)userID withRequest:(NSString*)request;
 -(void)cancelRequestForUser:(NSString*)userID ;
 @end

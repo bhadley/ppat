@@ -47,7 +47,7 @@
 }
 
 
--(void)requestIsUrgent:(NSString*)urgency forUser:(NSString*)userID withRequest:(NSString*)request
+-(void)requestIsUrgent:(NSString*)urgency forUserID:(NSString*)userID withRequest:(NSString*)request
 //-(void)sendrequest:(BOOL)urgency forUser:(NSString*)userID
 {
     // Create a reference to a Firebase location
@@ -60,6 +60,7 @@
   
     
     NSDictionary *post1 = @{
+                            @"userID":userID,
                             @"isUrgent":urgency,
                             @"text": request,
                             @"timestamp":[NSString stringWithFormat:@"%f", timeInMiliseconds]

@@ -9,7 +9,7 @@
 #import "UrgentTableViewController.h"
 #import "UrgentTableViewCell.h"
 #import "utils.h"
-//#import <Firebase/Firebase.h>
+#import <Firebase/Firebase.h>
 
 @interface UrgentTableViewController ()
 
@@ -56,6 +56,12 @@
                       @"william.png", nil];
     
     
+    
+    // Create a reference to a Firebase location
+    Firebase *myRootRef = [[Firebase alloc] initWithUrl:@"https://bostonhome.firebaseio.com/requests"];
+    [myRootRef observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+        NSLog(@"%@ -> %@", snapshot.name, snapshot.value);
+    }];
     
     
 }

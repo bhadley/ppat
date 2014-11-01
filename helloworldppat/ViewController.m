@@ -18,7 +18,7 @@
 
 - (IBAction)urgentRequest:(id)sender {
     NSLog(@"urgentRequest");
-    [self requestIsUrgent:@"y" forUser:@"Margaret" withRequest:@"video"];
+    [self requestIsUrgent:@"y" forUserID:@"1" withRequest:@"video"];
 }
 
 
