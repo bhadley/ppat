@@ -55,12 +55,12 @@
 
 - (IBAction)sendNurse:(id)sender {
     NSLog(@"sendNurse PRESSED");
-    [self requestIsUrgent:@"n" forUserID:@"1" withRequest:@"Send a nurse"];
+    [self requestIsUrgent:@"n" forUserID:@"2" withRequest:@"Send a nurse"];
 }
 
 - (IBAction)bringWater:(id)sender {
     NSLog(@"bringWater PRESSED");
-    [self requestIsUrgent:@"n" forUserID:@"1" withRequest:@"Bring water"];
+    [self requestIsUrgent:@"n" forUserID:@"3" withRequest:@"Bring water"];
 }
 
 

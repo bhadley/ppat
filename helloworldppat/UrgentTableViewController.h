@@ -10,8 +10,13 @@
 
 @interface UrgentTableViewController : UITableViewController
 
-@property (nonatomic, strong) NSArray *residentImages;
-@property (nonatomic, strong) NSArray *names;
-@property (nonatomic, strong) NSArray *textRequests;
-@property (nonatomic, strong) NSArray *isUrgent;
+@property (nonatomic, strong) NSMutableArray *residentImages;
+@property (nonatomic, strong) NSMutableArray *names;
+@property (nonatomic, strong) NSMutableArray *textRequests;
+@property (nonatomic, strong) NSMutableArray *isUrgent;
+
+@property (nonatomic, strong) NSMutableArray *idsFB;
+@property (nonatomic, strong) NSMutableArray *namesFB;
+@property (nonatomic, strong) NSMutableArray *roomsFB;
+@property (nonatomic, strong) NSMutableArray *picturesFB;
 @end

@@ -65,7 +65,7 @@
                             @"text": request,
                             @"timestamp":[NSString stringWithFormat:@"%f", timeInMiliseconds]
                             };
-    Firebase *post1Ref = [myRootRef childByAppendingPath: @"1"];
+    Firebase *post1Ref = [myRootRef childByAppendingPath: userID];
     [post1Ref setValue: post1];
     
    // NSString *postId = post1Ref.name;

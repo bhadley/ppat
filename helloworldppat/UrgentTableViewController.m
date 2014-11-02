@@ -31,8 +31,13 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     NSLog(@"did load");
+    
+     self.isUrgent = [[NSMutableArray alloc] init];
+     self.names = [[NSMutableArray alloc] init];
+     self.textRequests = [[NSMutableArray alloc] init];
+     self.residentImages = [[NSMutableArray alloc] init];
 
-    self.isUrgent = @[@"y", @"n", @"y", @"n", @"n"];
+    /*self.isUrgent = @[@"y", @"n", @"y", @"n", @"n"];
 
     self.names = [[NSArray alloc]
                      initWithObjects:@"Margaret",
@@ -53,15 +58,84 @@
                       @"laura.png",
                       @"tanya.png",
                       @"beth.png",
-                      @"william.png", nil];
+                      @"william.png", nil];*/
+    
+    
+    self.idsFB = [[NSMutableArray alloc] init];
+    self.namesFB = [[NSMutableArray alloc] init];
+    self.roomsFB = [[NSMutableArray alloc] init];
+    self.picturesFB = [[NSMutableArray alloc] init];
+    
+    // Create a reference to a Firebase location
+    Firebase *userRef = [[Firebase alloc] initWithUrl:@"https://bostonhome.firebaseio.com/users"];
+    [userRef observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+    
+    for (FDataSnapshot* childSnap in snapshot.children) {
+        [self.idsFB addObject:childSnap.name];
+        [self.namesFB addObject:childSnap.value[@"name"]];
+        [self.roomsFB addObject:childSnap.value[@"room"]];
+        [self.picturesFB addObject:childSnap.value[@"picture"]];
+    }
+        
+    }];
+    
     
     
     
     // Create a reference to a Firebase location
     Firebase *myRootRef = [[Firebase alloc] initWithUrl:@"https://bostonhome.firebaseio.com/requests"];
-    [myRootRef observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+    [myRootRef observeEventType:FEventTypeChildAdded withBlock:^(FDataSnapshot *snapshot) {
         NSLog(@"%@ -> %@", snapshot.name, snapshot.value);
+        
+        NSString *userID = snapshot.value[@"userID"];
+        NSInteger indexIntoArray = [self.idsFB indexOfObject:userID];
+        NSString *name = self.namesFB[indexIntoArray];
+        NSString *room = self.roomsFB[indexIntoArray];
+        NSString *picture = self.picturesFB[indexIntoArray];
+        
+        NSLog(@"%@", snapshot.value[@"isUrgent"]);
+        
+        if([snapshot.value[@"isUrgent"]  isEqual: @"n"]) {
+            [self.isUrgent addObject:@"n"];
+            [self.names addObject:name];
+            [self.textRequests addObject:snapshot.value[@"text"]];
+            [self.residentImages addObject:picture];
+        } else {
+            NSInteger firstNo = [self.isUrgent indexOfObject:@"n"];
+            if(NSNotFound == firstNo) {
+                // TODO: create method since this is the same as above?
+                [self.isUrgent addObject:@"y"];
+                [self.names addObject:name];
+                [self.textRequests addObject:snapshot.value[@"text"]];
+                [self.residentImages addObject:picture];
+            } else {
+                [self.isUrgent insertObject:@"y" atIndex:firstNo];
+                [self.names insertObject:name atIndex:firstNo];
+                [self.textRequests insertObject:snapshot.value[@"text"] atIndex:firstNo];
+                [self.residentImages insertObject:picture atIndex:firstNo];
+            }
+        }
+        
+        [self.tableView reloadData];
     }];
+    
+    [myRootRef observeEventType:FEventTypeChildRemoved withBlock:^(FDataSnapshot *snapshot) {
+        NSLog(@"%@ -> %@", snapshot.name, snapshot.value);
+        NSString *name = @"1"; // TODO: Convert
+        
+        for (int i=0; i<[self.names count]; i=i+1) {
+            if ([self.names[i] isEqual: name]) {
+                [self.names removeObjectAtIndex:i];
+                [self.isUrgent removeObjectAtIndex:i];
+                [self.textRequests removeObjectAtIndex:i];
+                [self.residentImages removeObjectAtIndex:i];
+            }
+        }
+        
+        [self.tableView reloadData];
+    }];
+    
+ 
     
     
 }
