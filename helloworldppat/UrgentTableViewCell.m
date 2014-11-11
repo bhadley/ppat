@@ -31,6 +31,20 @@
     
 }
 
+- (IBAction)requestProcessed:(id)sender {
+    NSLog(@"request processed");
+    NSLog(@"Processed request from this user id: %@", [self userIDHiddenLabel].text);
+    NSString *userID = [self nameLabel].text;
+    Firebase *myRootRef = [[Firebase alloc] initWithUrl:@"https://bostonhome.firebaseio.com/processed"];
+    // Write data to Firebase
+    Firebase *post1Ref = [myRootRef childByAppendingPath: userID];
+    NSDictionary *post1 = @{
+                            @"text": @"Hello",
+                            };
+    [post1Ref setValue: post1];
+    
+}
+
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];

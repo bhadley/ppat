@@ -8,11 +8,39 @@
 
 #import "SecondViewController.h"
 #import "utils.h"
+#import <Firebase/Firebase.h>
+
 @interface SecondViewController ()
 
 @end
 
 @implementation SecondViewController
+
+@synthesize requestStatus = _requestStatus;
+
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    NSLog(@"did load resident view");
+    
+    // Create a reference to a Firebase location
+    Firebase *userRef = [[Firebase alloc] initWithUrl:@"https://bostonhome.firebaseio.com/processed"];
+    [userRef observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+        
+        NSLog(@"%@ -> %@", snapshot.name, snapshot.value);
+
+        for (FDataSnapshot* childSnap in snapshot.children) {
+            if([childSnap.name isEqual: @"Laura"]) {
+                NSLog(@"equal to Margaret");
+                [_requestStatus setText:@"Request processed"];
+            }
+        }
+        
+    }];
+    
+    
+}
 
 /*
 - (IBAction)cancelRequestCall:(id)sender{

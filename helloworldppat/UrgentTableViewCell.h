@@ -17,4 +17,6 @@
 
 - (IBAction)cancelRequest:(id)sender;
 
+- (IBAction)requestProcessed:(id)sender;
+
 @end

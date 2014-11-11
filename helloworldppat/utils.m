@@ -78,4 +78,13 @@
     [fb removeValue];
 }
 
+-(void)processUserRequest:(NSString*)userID
+//-(void)sendrequest:(BOOL)urgency forUser:(NSString*)userID
+{
+    // Create a reference to a Firebase location
+    Firebase *myRootRef = [[Firebase alloc] initWithUrl:@"https://bostonhome.firebaseio.com/processed"];
+    // Write data to Firebase
+    [myRootRef childByAppendingPath: userID];
+}
+
 @end

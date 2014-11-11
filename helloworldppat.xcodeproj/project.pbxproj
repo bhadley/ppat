@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DE25BA5F1A126FE20028194E /* water.png in Resources */ = {isa = PBXBuildFile; fileRef = DE25BA5E1A126FE20028194E /* water.png */; };
+		DE25BA671A12ADED0028194E /* bringWater.png in Resources */ = {isa = PBXBuildFile; fileRef = DE25BA661A12ADED0028194E /* bringWater.png */; };
 		DE2E0A711A0303CF00E81B30 /* margaret.png in Resources */ = {isa = PBXBuildFile; fileRef = DE2E0A701A0303CF00E81B30 /* margaret.png */; };
 		DE2E0A761A032DD300E81B30 /* beth.png in Resources */ = {isa = PBXBuildFile; fileRef = DE2E0A721A032DD300E81B30 /* beth.png */; };
 		DE2E0A771A032DD300E81B30 /* laura.png in Resources */ = {isa = PBXBuildFile; fileRef = DE2E0A731A032DD300E81B30 /* laura.png */; };
@@ -59,6 +60,7 @@
 
 /* Begin PBXFileReference section */
 		DE25BA5E1A126FE20028194E /* water.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = water.png; sourceTree = "<group>"; };
+		DE25BA661A12ADED0028194E /* bringWater.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bringWater.png; sourceTree = "<group>"; };
 		DE2E0A701A0303CF00E81B30 /* margaret.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = margaret.png; sourceTree = "<group>"; };
 		DE2E0A721A032DD300E81B30 /* beth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = beth.png; sourceTree = "<group>"; };
 		DE2E0A731A032DD300E81B30 /* laura.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = laura.png; sourceTree = "<group>"; };
@@ -236,6 +238,7 @@
 				DE2E0A731A032DD300E81B30 /* laura.png */,
 				DE2E0A741A032DD300E81B30 /* tanya.png */,
 				DE2E0A751A032DD300E81B30 /* william.png */,
+				DE25BA661A12ADED0028194E /* bringWater.png */,
 				DE25BA5E1A126FE20028194E /* water.png */,
 				DE2E0A701A0303CF00E81B30 /* margaret.png */,
 				DEBECA4419E75F9D00501D74 /* icon.png */,
@@ -330,6 +333,7 @@
 				DE2E0A771A032DD300E81B30 /* laura.png in Resources */,
 				DE7E569A19E3235800C4EF2D /* Images.xcassets in Resources */,
 				DE2E0A7D1A032FCD00E81B30 /* videochat.jpg in Resources */,
+				DE25BA671A12ADED0028194E /* bringWater.png in Resources */,
 				DE5AC3A81A0342730053B7DD /* videochatSmall.png in Resources */,
 				DE2E0A761A032DD300E81B30 /* beth.png in Resources */,
 				DE7E56D419E743F500C4EF2D /* hangup.png in Resources */,

@@ -11,6 +11,6 @@
 @interface SecondViewController : UIViewController
 
 //- (IBAction)cancelRequestCall:(id)sender;
-
+@property (nonatomic, strong) IBOutlet UILabel *requestStatus;
 
 @end
