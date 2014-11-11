@@ -50,17 +50,17 @@
 
 - (IBAction)videoChat:(id)sender {
     NSLog(@"videoChat PRESSED");
-    [self requestIsUrgent:@"n" forUserID:@"1" withRequest:@"video"];
+    [self requestForUserID:@"Margaret" withRequest:@"video"];
 }
 
 - (IBAction)sendNurse:(id)sender {
     NSLog(@"sendNurse PRESSED");
-    [self requestIsUrgent:@"n" forUserID:@"2" withRequest:@"Send a nurse"];
+    [self requestForUserID:@"Beth" withRequest:@"Send a nurse"];
 }
 
 - (IBAction)bringWater:(id)sender {
     NSLog(@"bringWater PRESSED");
-    [self requestIsUrgent:@"n" forUserID:@"3" withRequest:@"Bring water"];
+    [self requestForUserID:@"Laura" withRequest:@"Bring water"];
 }
 
 

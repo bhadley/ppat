@@ -14,10 +14,12 @@
 
 @implementation SecondViewController
 
+/*
 - (IBAction)cancelRequestCall:(id)sender{
 
     [self cancelRequestForUser:@"1"];
 }
+ */
 
 
 /*

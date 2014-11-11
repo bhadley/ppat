@@ -32,10 +32,8 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     NSLog(@"did load");
     
-     self.isUrgent = [[NSMutableArray alloc] init];
-     self.names = [[NSMutableArray alloc] init];
-     self.textRequests = [[NSMutableArray alloc] init];
-     self.residentImages = [[NSMutableArray alloc] init];
+     //self.isUrgent = [[NSMutableArray alloc] init];
+    
 
     /*self.isUrgent = @[@"y", @"n", @"y", @"n", @"n"];
 
@@ -60,6 +58,10 @@
                       @"beth.png",
                       @"william.png", nil];*/
     
+    self.names = [[NSMutableArray alloc] init];
+    
+    self.textRequests = [[NSMutableArray alloc] init];
+    self.residentImages = [[NSMutableArray alloc] init];
     
     self.idsFB = [[NSMutableArray alloc] init];
     self.namesFB = [[NSMutableArray alloc] init];
@@ -85,22 +87,24 @@
     // Create a reference to a Firebase location
     Firebase *myRootRef = [[Firebase alloc] initWithUrl:@"https://bostonhome.firebaseio.com/requests"];
     [myRootRef observeEventType:FEventTypeChildAdded withBlock:^(FDataSnapshot *snapshot) {
+        
         NSLog(@"%@ -> %@", snapshot.name, snapshot.value);
         
-        NSString *userID = snapshot.value[@"userID"];
-        NSInteger indexIntoArray = [self.idsFB indexOfObject:userID];
-        NSString *name = self.namesFB[indexIntoArray];
+        NSString *userID = snapshot.name; // snapshot.value[@"userID"];
+        NSInteger indexIntoArray = [self.namesFB indexOfObject:userID];
+        NSLog(@"%ld", (long)indexIntoArray);
+        NSString *name = snapshot.name;
         NSString *room = self.roomsFB[indexIntoArray];
         NSString *picture = self.picturesFB[indexIntoArray];
         
-        NSLog(@"%@", snapshot.value[@"isUrgent"]);
+        //NSLog(@"%@", snapshot.value[@"isUrgent"]);
         
-        if([snapshot.value[@"isUrgent"]  isEqual: @"n"]) {
-            [self.isUrgent addObject:@"n"];
+        //if([snapshot.value[@"isUrgent"]  isEqual: @"n"]) {
+           // [self.isUrgent addObject:@"n"];
             [self.names addObject:name];
             [self.textRequests addObject:snapshot.value[@"text"]];
             [self.residentImages addObject:picture];
-        } else {
+       /* } else {
             NSInteger firstNo = [self.isUrgent indexOfObject:@"n"];
             if(NSNotFound == firstNo) {
                 // TODO: create method since this is the same as above?
@@ -115,22 +119,34 @@
                 [self.residentImages insertObject:picture atIndex:firstNo];
             }
         }
-        
+        */
         [self.tableView reloadData];
     }];
     
     [myRootRef observeEventType:FEventTypeChildRemoved withBlock:^(FDataSnapshot *snapshot) {
-        NSLog(@"%@ -> %@", snapshot.name, snapshot.value);
-        NSString *name = @"1"; // TODO: Convert
         
-        for (int i=0; i<[self.names count]; i=i+1) {
-            if ([self.names[i] isEqual: name]) {
+        NSLog(@"Child removed");
+         NSLog(@"%@", snapshot.name);
+        //NSLog(@"%@ -> %@", snapshot.name, snapshot.value[@"userID"]);
+        //int userID = [snapshot.value[@"userID"] intValue]; // TODO: Convert
+        //int userID = [snapshot.name intValue]; // TODO: Convert
+        
+         //NSString *name = self.idsFB.value[userID];
+        // NSLog(@"%@",name);
+        
+        //NSString *name = self.names[userID-1];
+       // NSLog(@"%@",name);
+        NSInteger i = [self.names indexOfObject:snapshot.name];
+        //for (int i=0; i<[self.names count]; i=i+1) {
+            
+            //if ([self.names[i] isEqual: name]) {
+              //  NSLog(@"DELETING%@", i);
                 [self.names removeObjectAtIndex:i];
-                [self.isUrgent removeObjectAtIndex:i];
+                //[self.isUrgent removeObjectAtIndex:i];
                 [self.textRequests removeObjectAtIndex:i];
                 [self.residentImages removeObjectAtIndex:i];
-            }
-        }
+            //}
+        //}
         
         [self.tableView reloadData];
     }];
@@ -197,8 +213,10 @@
     cell.nameLabel.text = [self.names
                            objectAtIndex: [indexPath row]];
     
-
-    
+    //NSString *strValue = @([indexPath row]).stringValue;
+    //NSLog([self.idsFB objectAtIndex: [indexPath row]]);
+   // int b = indexPath - 1;
+    //cell.userIDHiddenLabel.text = indexPath - 1]; //[self.idsFB objectAtIndex: [indexPath row]];
     cell.textLabel.text = [self.textRequests
                             objectAtIndex:[indexPath row]];
     

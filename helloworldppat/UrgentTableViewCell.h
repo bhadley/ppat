@@ -12,8 +12,9 @@
 @property (nonatomic, strong) IBOutlet UIImageView *residentImage;
 @property (nonatomic, strong) IBOutlet UILabel *nameLabel;
 @property (nonatomic, strong) IBOutlet UILabel *textLabel;
+@property (nonatomic, strong) IBOutlet UILabel *userIDHiddenLabel;
 
 
-
+- (IBAction)cancelRequest:(id)sender;
 
 @end

@@ -177,7 +177,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hangup.png" translatesAutoresizingMaskIntoConstraints="NO" id="AFq-rL-rWD">
                                 <rect key="frame" x="313" y="636" width="111" height="76"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="8ECC8B25-8A82-4BB0-A81B-0B27BAA12369" translatesAutoresizingMaskIntoConstraints="NO" id="MHw-7Y-tpw">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="368F26F2-434F-4B5B-927B-58A786F9EAA3" translatesAutoresizingMaskIntoConstraints="NO" id="MHw-7Y-tpw">
                                 <rect key="frame" x="118" y="76" width="667" height="500"/>
                             </imageView>
                         </subviews>
@@ -359,7 +359,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="8ECC8B25-8A82-4BB0-A81B-0B27BAA12369" width="900" height="848">
+        <image name="368F26F2-434F-4B5B-927B-58A786F9EAA3" width="900" height="848">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGOzxYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK0HCBEW
 GxwgISksLzU4VSRudWxs1AkKCwwNDg8QViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBzV05TQ29sb3KA
