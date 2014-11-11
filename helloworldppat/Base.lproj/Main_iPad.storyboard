@@ -5,6 +5,42 @@
     </dependencies>
     <scenes>
         <!--View Controller-->
+        <scene sceneID="8T4-NO-kwg">
+            <objects>
+                <viewController id="fm9-pG-c2C" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0j4-T1-4r2"/>
+                        <viewControllerLayoutGuide type="bottom" id="8K7-HV-86V"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kMc-oc-fWO">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cyw-ma-hSR">
+                                <rect key="frame" x="49" y="618" width="901" height="102"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <state key="normal" title="Cancel Call">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancelRequestCall:" destination="sb5-j0-BQX" eventType="touchUpInside" id="8yt-GX-bNr"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hangup.png" translatesAutoresizingMaskIntoConstraints="NO" id="LIX-BS-GqB">
+                                <rect key="frame" x="286" y="631" width="111" height="76"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LrW-b3-Fyc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-8" y="-1622"/>
+        </scene>
+        <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
@@ -25,7 +61,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="5TP-PH-v0z" kind="push" id="kaC-gd-Ov0"/>
+                                    <segue destination="UDj-k5-BQ0" kind="modal" id="0cy-8z-pLp"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q4b-U5-4XH">
@@ -49,7 +85,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="256" y="-655"/>
+            <point key="canvasLocation" x="444" y="-631"/>
         </scene>
         <!--Third View Controller-->
         <scene sceneID="Pea-Wg-SDt">
@@ -73,7 +109,7 @@
                                 </state>
                                 <connections>
                                     <action selector="videoChat:" destination="UDj-k5-BQ0" eventType="touchUpInside" id="j95-W3-GCH"/>
-                                    <segue destination="O1G-am-VfI" kind="push" id="UuW-ne-7IE"/>
+                                    <segue destination="fm9-pG-c2C" kind="modal" id="PxX-Ih-DdE"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jts-hD-MSV">
@@ -143,6 +179,12 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bring Water" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H2Z-WK-5as">
+                                <rect key="frame" x="448" y="194" width="162" height="35"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -152,7 +194,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SvT-8n-Rfg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1163" y="-1467"/>
+            <point key="canvasLocation" x="1151" y="-1587"/>
         </scene>
         <!--Second View Controller-->
         <scene sceneID="O2r-kz-gNY">
@@ -166,11 +208,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GmW-nN-zNc">
-                                <rect key="frame" x="313" y="229" width="256" height="167"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ASV-xX-I4s">
                                 <rect key="frame" x="62" y="623" width="901" height="102"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -186,9 +223,11 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hangup.png" translatesAutoresizingMaskIntoConstraints="NO" id="AFq-rL-rWD">
                                 <rect key="frame" x="313" y="636" width="111" height="76"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="facetime.png" translatesAutoresizingMaskIntoConstraints="NO" id="MHw-7Y-tpw">
-                                <rect key="frame" x="118" y="76" width="667" height="500"/>
-                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your message has been sent." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GmW-nN-zNc">
+                                <rect key="frame" x="30" y="199" width="964" height="167"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="75"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -217,54 +256,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Gh-dk-Uba" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-932" y="-667"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="Unh-p9-2wd">
-            <objects>
-                <viewController id="5TP-PH-v0z" customClass="ViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="eNu-YJ-h9e"/>
-                        <viewControllerLayoutGuide type="bottom" id="mjR-Xg-FxD"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="OlT-vA-zwm">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="69u-6l-de6">
-                                <rect key="frame" x="63" y="63" width="417" height="641"/>
-                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                <state key="normal" title="URGENT">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="urgentRequest:" destination="5TP-PH-v0z" eventType="touchUpInside" id="qBb-Ru-tpq"/>
-                                    <segue destination="O1G-am-VfI" kind="push" id="RKE-RR-Fnd"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ydh-6C-JcD">
-                                <rect key="frame" x="539" y="63" width="417" height="641"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                <state key="normal" title="NON-URGENT">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="UDj-k5-BQ0" kind="push" id="M9h-8N-QGv"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="Gok-rq-AHn"/>
-                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="e9B-xt-0JW" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-176" y="-1817"/>
         </scene>
         <!--Urgent Table View Controller-->
         <scene sceneID="gKh-dA-mrX">
@@ -300,12 +291,28 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="userID" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jl2-mT-VwC">
+                                            <rect key="frame" x="360" y="48" width="50" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gwH-gO-ben">
+                                            <rect key="frame" x="986" y="4" width="30" height="30"/>
+                                            <state key="normal" title="X">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="cancelRequest:" destination="QJo-CL-Ptm" eventType="touchUpInside" id="pBK-q0-nBx"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="nameLabel" destination="iPb-Uw-OF6" id="RRC-TA-S7l"/>
                                     <outlet property="residentImage" destination="E0g-uZ-9Uk" id="h8I-66-pqZ"/>
                                     <outlet property="textLabel" destination="Ueh-lW-6Dw" id="114-xs-w0A"/>
+                                    <outlet property="userIDHiddenLabel" destination="jl2-mT-VwC" id="zHg-RN-bXm"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="videoTableCell" rowHeight="122" id="jWY-tW-wdL" customClass="UrgentTableViewCell">
@@ -330,11 +337,27 @@
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" placeholderIntrinsicWidth="63" placeholderIntrinsicHeight="61" image="videochatSmall.png" translatesAutoresizingMaskIntoConstraints="NO" id="emZ-T7-5F8">
                                             <rect key="frame" x="194" y="45" width="63" height="61"/>
                                         </imageView>
+                                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="userID" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r1U-J5-ciA">
+                                            <rect key="frame" x="362" y="50" width="50" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t1c-JM-nuu">
+                                            <rect key="frame" x="986" y="4" width="30" height="30"/>
+                                            <state key="normal" title="X">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="cancelRequest:" destination="jWY-tW-wdL" eventType="touchUpInside" id="edu-34-wEG"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="nameLabel" destination="34p-Jr-155" id="qFN-9b-wfB"/>
                                     <outlet property="residentImage" destination="qzw-lx-eaN" id="8my-lI-1dj"/>
+                                    <outlet property="userIDHiddenLabel" destination="r1U-J5-ciA" id="ude-5g-psO"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -350,14 +373,56 @@
             </objects>
             <point key="canvasLocation" x="628" y="263"/>
         </scene>
+        <!--Second View Controller-->
+        <scene sceneID="xX8-17-Gb2">
+            <objects>
+                <viewController id="sb5-j0-BQX" customClass="SecondViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Gnh-8g-xZE"/>
+                        <viewControllerLayoutGuide type="bottom" id="DQh-Mu-a5d"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="psw-VO-xSm">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fx0-vJ-FfJ">
+                                <rect key="frame" x="62" y="623" width="901" height="102"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <state key="normal" title="Cancel Call">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancelRequestCall:" destination="sb5-j0-BQX" eventType="touchUpInside" id="xtv-b3-5wB"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hangup.png" translatesAutoresizingMaskIntoConstraints="NO" id="MrS-nO-Cvi">
+                                <rect key="frame" x="313" y="636" width="111" height="76"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your message has been sent." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="416-U6-G1M">
+                                <rect key="frame" x="30" y="199" width="964" height="167"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="75"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="r5v-Ar-dXr"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="69S-el-gTC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1799" y="-553"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="facetime.png" width="900" height="848"/>
         <image name="hangup.png" width="256" height="152"/>
         <image name="nurse.jpg" width="214" height="236"/>
         <image name="videochatBig.png" width="212" height="212"/>
         <image name="videochatSmall.png" width="50" height="50"/>
-        <image name="water.png" width="760" height="690"/>
+        <image name="water.png" width="3000" height="3000"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
@@ -365,6 +430,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="RKE-RR-Fnd"/>
+        <segue reference="v3W-TU-Hl5"/>
     </inferredMetricsTieBreakers>
 </document>
