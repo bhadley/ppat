@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		DE25BA5F1A126FE20028194E /* water.png in Resources */ = {isa = PBXBuildFile; fileRef = DE25BA5E1A126FE20028194E /* water.png */; };
 		DE25BA671A12ADED0028194E /* bringWater.png in Resources */ = {isa = PBXBuildFile; fileRef = DE25BA661A12ADED0028194E /* bringWater.png */; };
+		DE25BA6D1A1307730028194E /* video.png in Resources */ = {isa = PBXBuildFile; fileRef = DE25BA6C1A1307730028194E /* video.png */; };
+		DE25BA6F1A1307800028194E /* getInOutBed.png in Resources */ = {isa = PBXBuildFile; fileRef = DE25BA6E1A1307800028194E /* getInOutBed.png */; };
+		DE25BA711A13078C0028194E /* needMeds.png in Resources */ = {isa = PBXBuildFile; fileRef = DE25BA701A13078C0028194E /* needMeds.png */; };
+		DE25BA731A1307A00028194E /* sendAid.png in Resources */ = {isa = PBXBuildFile; fileRef = DE25BA721A1307A00028194E /* sendAid.png */; };
+		DE25BA751A1307A80028194E /* sendNurse.png in Resources */ = {isa = PBXBuildFile; fileRef = DE25BA741A1307A80028194E /* sendNurse.png */; };
 		DE2E0A711A0303CF00E81B30 /* margaret.png in Resources */ = {isa = PBXBuildFile; fileRef = DE2E0A701A0303CF00E81B30 /* margaret.png */; };
 		DE2E0A761A032DD300E81B30 /* beth.png in Resources */ = {isa = PBXBuildFile; fileRef = DE2E0A721A032DD300E81B30 /* beth.png */; };
 		DE2E0A771A032DD300E81B30 /* laura.png in Resources */ = {isa = PBXBuildFile; fileRef = DE2E0A731A032DD300E81B30 /* laura.png */; };
@@ -61,6 +66,11 @@
 /* Begin PBXFileReference section */
 		DE25BA5E1A126FE20028194E /* water.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = water.png; sourceTree = "<group>"; };
 		DE25BA661A12ADED0028194E /* bringWater.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bringWater.png; sourceTree = "<group>"; };
+		DE25BA6C1A1307730028194E /* video.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = video.png; sourceTree = "<group>"; };
+		DE25BA6E1A1307800028194E /* getInOutBed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = getInOutBed.png; sourceTree = "<group>"; };
+		DE25BA701A13078C0028194E /* needMeds.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = needMeds.png; sourceTree = "<group>"; };
+		DE25BA721A1307A00028194E /* sendAid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sendAid.png; sourceTree = "<group>"; };
+		DE25BA741A1307A80028194E /* sendNurse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sendNurse.png; sourceTree = "<group>"; };
 		DE2E0A701A0303CF00E81B30 /* margaret.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = margaret.png; sourceTree = "<group>"; };
 		DE2E0A721A032DD300E81B30 /* beth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = beth.png; sourceTree = "<group>"; };
 		DE2E0A731A032DD300E81B30 /* laura.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = laura.png; sourceTree = "<group>"; };
@@ -234,13 +244,18 @@
 				DE5AC3A71A0342730053B7DD /* videochatSmall.png */,
 				DE2E0A7A1A032FCD00E81B30 /* videochat.jpg */,
 				DE2E0A7B1A032FCD00E81B30 /* videochatBig.png */,
+				DE25BA701A13078C0028194E /* needMeds.png */,
 				DE2E0A721A032DD300E81B30 /* beth.png */,
 				DE2E0A731A032DD300E81B30 /* laura.png */,
 				DE2E0A741A032DD300E81B30 /* tanya.png */,
 				DE2E0A751A032DD300E81B30 /* william.png */,
+				DE25BA741A1307A80028194E /* sendNurse.png */,
 				DE25BA661A12ADED0028194E /* bringWater.png */,
 				DE25BA5E1A126FE20028194E /* water.png */,
+				DE25BA6E1A1307800028194E /* getInOutBed.png */,
 				DE2E0A701A0303CF00E81B30 /* margaret.png */,
+				DE25BA721A1307A00028194E /* sendAid.png */,
+				DE25BA6C1A1307730028194E /* video.png */,
 				DEBECA4419E75F9D00501D74 /* icon.png */,
 				DE7E56D919E7455800C4EF2D /* facetime.png */,
 				DE7E56CF19E743F500C4EF2D /* hangup.png */,
@@ -333,6 +348,7 @@
 				DE2E0A771A032DD300E81B30 /* laura.png in Resources */,
 				DE7E569A19E3235800C4EF2D /* Images.xcassets in Resources */,
 				DE2E0A7D1A032FCD00E81B30 /* videochat.jpg in Resources */,
+				DE25BA751A1307A80028194E /* sendNurse.png in Resources */,
 				DE25BA671A12ADED0028194E /* bringWater.png in Resources */,
 				DE5AC3A81A0342730053B7DD /* videochatSmall.png in Resources */,
 				DE2E0A761A032DD300E81B30 /* beth.png in Resources */,
@@ -340,11 +356,15 @@
 				DE7E56D519E743F500C4EF2D /* nurse.jpg in Resources */,
 				DE2E0A781A032DD300E81B30 /* tanya.png in Resources */,
 				DE7E56DA19E7455800C4EF2D /* facetime.png in Resources */,
+				DE25BA711A13078C0028194E /* needMeds.png in Resources */,
 				DEBECA4519E75F9D00501D74 /* icon.png in Resources */,
+				DE25BA6F1A1307800028194E /* getInOutBed.png in Resources */,
 				DE2E0A791A032DD300E81B30 /* william.png in Resources */,
 				DE2E0A7E1A032FCD00E81B30 /* videochatBig.png in Resources */,
 				DE7E569219E3235800C4EF2D /* Main_iPhone.storyboard in Resources */,
 				DE7E568919E3235800C4EF2D /* InfoPlist.strings in Resources */,
+				DE25BA731A1307A00028194E /* sendAid.png in Resources */,
+				DE25BA6D1A1307730028194E /* video.png in Resources */,
 				DE2E0A711A0303CF00E81B30 /* margaret.png in Resources */,
 				DE25BA5F1A126FE20028194E /* water.png in Resources */,
 			);

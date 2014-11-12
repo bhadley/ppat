@@ -31,8 +31,7 @@
         NSLog(@"%@ -> %@", snapshot.name, snapshot.value);
 
         for (FDataSnapshot* childSnap in snapshot.children) {
-            if([childSnap.name isEqual: @"Laura"]) {
-                NSLog(@"equal to Margaret");
+            if([childSnap.name isEqual: @"Margaret"]) {
                 [_requestStatus setText:@"Request processed"];
             }
         }

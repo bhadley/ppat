@@ -48,19 +48,29 @@
 }
 */
 
+- (IBAction)bringWater:(id)sender {
+    NSLog(@"bringWater PRESSED");
+    [self requestForUserID:@"Margaret" withRequest:@"Bring water"];
+}
+
+- (IBAction)needMedications:(id)sender {
+    [self requestForUserID:@"Margaret" withRequest:@"Need Medications"];
+}
+
+- (IBAction)getInOutBed:(id)sender {
+    [self requestForUserID:@"Margaret" withRequest:@"Would like to get in/out of bed"];
+}
+
+- (IBAction)sendAid:(id)sender {
+      [self requestForUserID:@"Margaret" withRequest:@"Send Aid"];
+}
+
 - (IBAction)videoChat:(id)sender {
-    NSLog(@"videoChat PRESSED");
     [self requestForUserID:@"Margaret" withRequest:@"video"];
 }
 
 - (IBAction)sendNurse:(id)sender {
-    NSLog(@"sendNurse PRESSED");
-    [self requestForUserID:@"Beth" withRequest:@"Send a nurse"];
-}
-
-- (IBAction)bringWater:(id)sender {
-    NSLog(@"bringWater PRESSED");
-    [self requestForUserID:@"Laura" withRequest:@"Bring water"];
+    [self requestForUserID:@"Margaret" withRequest:@"Send a nurse"];
 }
 
 

@@ -16,6 +16,8 @@
 @synthesize residentImage = _residentImage;
 @synthesize userIDHiddenLabel = _userIDHiddenLabel;
 
+
+
 - (void)awakeFromNib {
     // Initialization code
 }
@@ -28,6 +30,9 @@
     
     Firebase *fb = [[Firebase alloc] initWithUrl:[NSString stringWithFormat:@"%@/%@", @"https://bostonhome.firebaseio.com/requests/", value]];
     [fb removeValue];
+    
+    Firebase *fb1 = [[Firebase alloc] initWithUrl:[NSString stringWithFormat:@"%@/%@", @"https://bostonhome.firebaseio.com/processed/", value]];
+    [fb1 removeValue];
     
 }
 
@@ -42,7 +47,7 @@
                             @"text": @"Hello",
                             };
     [post1Ref setValue: post1];
-    
+    self.backgroundColor = [UIColor greenColor];
 }
 
 
