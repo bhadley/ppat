@@ -13,8 +13,7 @@
 @property (nonatomic, strong) IBOutlet UILabel *nameLabel;
 @property (nonatomic, strong) IBOutlet UILabel *textLabel;
 @property (nonatomic, strong) IBOutlet UILabel *userIDHiddenLabel;
-
-
+@property (nonatomic, strong) IBOutlet UIButton *processRequest;
 
 - (IBAction)cancelRequest:(id)sender;
 
