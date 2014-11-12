@@ -7,7 +7,7 @@
 //
 
 #import "ThirdViewController.h"
-
+#import <Firebase/Firebase.h>
 #import "UrgentTableViewController.h"
 #import "utils.h"
 @interface ThirdViewController ()
@@ -29,6 +29,14 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    /*
+     Firebase *fb1 = [[Firebase alloc] initWithUrl:[NSString stringWithFormat:@"%@/%@", @"https://bostonhome.firebaseio.com/processed/", @"Margaret"]];
+    [fb1 removeValue];
+    NSLog(@"here");
+    Firebase *fb2 = [[Firebase alloc] initWithUrl:[NSString stringWithFormat:@"%@/%@", @"https://bostonhome.firebaseio.com/requests/", @"Margaret"]];
+    [fb2 removeValue];
+     */
+    
 }
 
 - (void)didReceiveMemoryWarning
