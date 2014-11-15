@@ -26,7 +26,7 @@
 		DE3973761A16DF84005105B8 /* videochat.png in Resources */ = {isa = PBXBuildFile; fileRef = DE3973751A16DF84005105B8 /* videochat.png */; };
 		DE3973781A16E4F5005105B8 /* hourglass.png in Resources */ = {isa = PBXBuildFile; fileRef = DE3973771A16E4F5005105B8 /* hourglass.png */; };
 		DE39737A1A16E4FA005105B8 /* checkboxbw.png in Resources */ = {isa = PBXBuildFile; fileRef = DE3973791A16E4FA005105B8 /* checkboxbw.png */; };
-		DE39737D1A16EE2D005105B8 /* sendTextController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE39737C1A16EE2D005105B8 /* sendTextController.m */; };
+		DE3973841A16F85F005105B8 /* SendTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3973831A16F85F005105B8 /* SendTextViewController.m */; };
 		DE5AC3A81A0342730053B7DD /* videochatSmall.png in Resources */ = {isa = PBXBuildFile; fileRef = DE5AC3A71A0342730053B7DD /* videochatSmall.png */; };
 		DE5AC3AA1A051D470053B7DD /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DE5AC3A91A051D470053B7DD /* libicucore.dylib */; };
 		DE5AC3AC1A051D510053B7DD /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DE5AC3AB1A051D510053B7DD /* libc++.dylib */; };
@@ -88,8 +88,8 @@
 		DE3973751A16DF84005105B8 /* videochat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = videochat.png; sourceTree = "<group>"; };
 		DE3973771A16E4F5005105B8 /* hourglass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hourglass.png; sourceTree = "<group>"; };
 		DE3973791A16E4FA005105B8 /* checkboxbw.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkboxbw.png; sourceTree = "<group>"; };
-		DE39737B1A16EE2D005105B8 /* sendTextController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sendTextController.h; sourceTree = "<group>"; };
-		DE39737C1A16EE2D005105B8 /* sendTextController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sendTextController.m; sourceTree = "<group>"; };
+		DE3973821A16F857005105B8 /* SendTextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SendTextViewController.h; sourceTree = "<group>"; };
+		DE3973831A16F85F005105B8 /* SendTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SendTextViewController.m; sourceTree = "<group>"; };
 		DE5AC3A71A0342730053B7DD /* videochatSmall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = videochatSmall.png; sourceTree = "<group>"; };
 		DE5AC3A91A051D470053B7DD /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
 		DE5AC3AB1A051D510053B7DD /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
@@ -200,6 +200,8 @@
 		DE7E568419E3235800C4EF2D /* helloworldppat */ = {
 			isa = PBXGroup;
 			children = (
+				DE3973831A16F85F005105B8 /* SendTextViewController.m */,
+				DE3973821A16F857005105B8 /* SendTextViewController.h */,
 				DE5AC3BD1A052BF00053B7DD /* utils.h */,
 				DE5AC3BE1A052BF00053B7DD /* utils.m */,
 				DE7E568D19E3235800C4EF2D /* AppDelegate.h */,
@@ -213,8 +215,6 @@
 				DE7E56B619E32E6200C4EF2D /* SecondViewController.h */,
 				DE7E56B719E32E6200C4EF2D /* SecondViewController.m */,
 				DE7E56B919E3311400C4EF2D /* ThirdViewController.h */,
-				DE39737B1A16EE2D005105B8 /* sendTextController.h */,
-				DE39737C1A16EE2D005105B8 /* sendTextController.m */,
 				DE7E56BA19E3311400C4EF2D /* ThirdViewController.m */,
 				DE7E569919E3235800C4EF2D /* Images.xcassets */,
 				DE7E568519E3235800C4EF2D /* Supporting Files */,
@@ -407,8 +407,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE7E56B819E32E6200C4EF2D /* SecondViewController.m in Sources */,
+				DE3973841A16F85F005105B8 /* SendTextViewController.m in Sources */,
 				DE7E56BB19E3311400C4EF2D /* ThirdViewController.m in Sources */,
-				DE39737D1A16EE2D005105B8 /* sendTextController.m in Sources */,
 				DE7E568F19E3235800C4EF2D /* AppDelegate.m in Sources */,
 				DEACC25B19FC36DC00DE339D /* UrgentTableViewCell.m in Sources */,
 				DE5AC3BF1A052BF00053B7DD /* utils.m in Sources */,
