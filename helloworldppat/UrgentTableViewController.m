@@ -200,13 +200,15 @@
                 reuseIdentifier:CellIdentifier];
     }
     
-    
+    cell.backgroundColor = [self colorWithHexString:@"FF4D4D"];//FF8566
+    /*
     if ( [[self.isUrgent objectAtIndex: [indexPath row] ]  isEqual: @"y"]) {
         cell.backgroundColor = [self colorWithHexString:@"FF8D71"];
     }
     else {
         cell.backgroundColor = [self colorWithHexString:@"FFFFC0"];
     }
+     */
     
     
     // Configure the cell...

@@ -23,6 +23,7 @@
 		DE2E0A7E1A032FCD00E81B30 /* videochatBig.png in Resources */ = {isa = PBXBuildFile; fileRef = DE2E0A7B1A032FCD00E81B30 /* videochatBig.png */; };
 		DE3973721A164233005105B8 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE3973701A164233005105B8 /* Main_iPad.storyboard */; };
 		DE3973741A16D90E005105B8 /* redx.png in Resources */ = {isa = PBXBuildFile; fileRef = DE3973731A16D90E005105B8 /* redx.png */; };
+		DE3973761A16DF84005105B8 /* videochat.png in Resources */ = {isa = PBXBuildFile; fileRef = DE3973751A16DF84005105B8 /* videochat.png */; };
 		DE5AC3A81A0342730053B7DD /* videochatSmall.png in Resources */ = {isa = PBXBuildFile; fileRef = DE5AC3A71A0342730053B7DD /* videochatSmall.png */; };
 		DE5AC3AA1A051D470053B7DD /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DE5AC3A91A051D470053B7DD /* libicucore.dylib */; };
 		DE5AC3AC1A051D510053B7DD /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DE5AC3AB1A051D510053B7DD /* libc++.dylib */; };
@@ -81,6 +82,7 @@
 		DE2E0A7B1A032FCD00E81B30 /* videochatBig.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = videochatBig.png; sourceTree = "<group>"; };
 		DE3973711A164233005105B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		DE3973731A16D90E005105B8 /* redx.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redx.png; sourceTree = "<group>"; };
+		DE3973751A16DF84005105B8 /* videochat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = videochat.png; sourceTree = "<group>"; };
 		DE5AC3A71A0342730053B7DD /* videochatSmall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = videochatSmall.png; sourceTree = "<group>"; };
 		DE5AC3A91A051D470053B7DD /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
 		DE5AC3AB1A051D510053B7DD /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
@@ -243,6 +245,7 @@
 		DE7E56CE19E743F500C4EF2D /* pics */ = {
 			isa = PBXGroup;
 			children = (
+				DE3973751A16DF84005105B8 /* videochat.png */,
 				DE3973731A16D90E005105B8 /* redx.png */,
 				DE5AC3A71A0342730053B7DD /* videochatSmall.png */,
 				DE2E0A7A1A032FCD00E81B30 /* videochat.jpg */,
@@ -350,6 +353,7 @@
 				DE2E0A771A032DD300E81B30 /* laura.png in Resources */,
 				DE3973721A164233005105B8 /* Main_iPad.storyboard in Resources */,
 				DE7E569A19E3235800C4EF2D /* Images.xcassets in Resources */,
+				DE3973761A16DF84005105B8 /* videochat.png in Resources */,
 				DE2E0A7D1A032FCD00E81B30 /* videochat.jpg in Resources */,
 				DE25BA751A1307A80028194E /* sendNurse.png in Resources */,
 				DE25BA671A12ADED0028194E /* bringWater.png in Resources */,
