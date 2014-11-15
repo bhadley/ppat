@@ -20,7 +20,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+   [self.requestTxtMsg becomeFirstResponder];
     
 }
 
@@ -46,7 +46,7 @@
     NSLog(@"hi!!!");
   
     [self requestForUserID:@"Margaret" withRequest:  _requestTxtMsg.text];
-   
+
 }
  
 
