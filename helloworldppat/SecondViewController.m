@@ -33,6 +33,8 @@
         for (FDataSnapshot* childSnap in snapshot.children) {
             if([childSnap.name isEqual: @"Margaret"]) {
                 [_requestStatus setText:@"Request processed"];
+        
+                _requestStatusIcon.image = [UIImage imageNamed:@"checkboxbw.png"];
             }
         }
         
@@ -41,12 +43,17 @@
     
 }
 
-/*
+
 - (IBAction)cancelRequestCall:(id)sender{
 
-    [self cancelRequestForUser:@"1"];
+    NSString *userID = @"Margaret";
+    Firebase *fb = [[Firebase alloc] initWithUrl:[NSString stringWithFormat:@"%@/%@", @"https://bostonhome.firebaseio.com/requests/", userID]];
+    [fb removeValue];
+    
+    Firebase *fb2 = [[Firebase alloc] initWithUrl:[NSString stringWithFormat:@"%@/%@", @"https://bostonhome.firebaseio.com/processed/", userID]];
+    [fb2 removeValue];
 }
- */
+
 
 
 /*

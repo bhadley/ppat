@@ -12,5 +12,6 @@
 
 //- (IBAction)cancelRequestCall:(id)sender;
 @property (nonatomic, strong) IBOutlet UILabel *requestStatus;
+@property (weak, nonatomic) IBOutlet UIImageView *requestStatusIcon;
 
 @end
