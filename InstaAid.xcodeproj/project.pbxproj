@@ -104,19 +104,19 @@
 		DE5AC3B11A051D6E0053B7DD /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		DE5AC3BD1A052BF00053B7DD /* utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utils.h; sourceTree = "<group>"; };
 		DE5AC3BE1A052BF00053B7DD /* utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = utils.m; sourceTree = "<group>"; };
-		DE7E567B19E3235800C4EF2D /* helloworldppat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = helloworldppat.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE7E567B19E3235800C4EF2D /* InstaAid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaAid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE7E567E19E3235800C4EF2D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DE7E568019E3235800C4EF2D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		DE7E568219E3235800C4EF2D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		DE7E568619E3235800C4EF2D /* helloworldppat-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "helloworldppat-Info.plist"; sourceTree = "<group>"; };
+		DE7E568619E3235800C4EF2D /* InstaAid-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "InstaAid-Info.plist"; sourceTree = "<group>"; };
 		DE7E568819E3235800C4EF2D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DE7E568A19E3235800C4EF2D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		DE7E568C19E3235800C4EF2D /* helloworldppat-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "helloworldppat-Prefix.pch"; sourceTree = "<group>"; };
+		DE7E568C19E3235800C4EF2D /* InstaAid-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "InstaAid-Prefix.pch"; sourceTree = "<group>"; };
 		DE7E568D19E3235800C4EF2D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DE7E568E19E3235800C4EF2D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		DE7E569119E3235800C4EF2D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		DE7E569919E3235800C4EF2D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		DE7E569F19E3235800C4EF2D /* helloworldppatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = helloworldppatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE7E569F19E3235800C4EF2D /* InstaAidTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InstaAidTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE7E56A019E3235800C4EF2D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		DE7E56A819E3235800C4EF2D /* helloworldppatTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "helloworldppatTests-Info.plist"; sourceTree = "<group>"; };
 		DE7E56AA19E3235800C4EF2D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -180,8 +180,8 @@
 		DE7E567C19E3235800C4EF2D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DE7E567B19E3235800C4EF2D /* helloworldppat.app */,
-				DE7E569F19E3235800C4EF2D /* helloworldppatTests.xctest */,
+				DE7E567B19E3235800C4EF2D /* InstaAid.app */,
+				DE7E569F19E3235800C4EF2D /* InstaAidTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -231,10 +231,10 @@
 		DE7E568519E3235800C4EF2D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				DE7E568619E3235800C4EF2D /* helloworldppat-Info.plist */,
+				DE7E568619E3235800C4EF2D /* InstaAid-Info.plist */,
 				DE7E568719E3235800C4EF2D /* InfoPlist.strings */,
 				DE7E568A19E3235800C4EF2D /* main.m */,
-				DE7E568C19E3235800C4EF2D /* helloworldppat-Prefix.pch */,
+				DE7E568C19E3235800C4EF2D /* InstaAid-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -294,9 +294,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		DE7E567A19E3235800C4EF2D /* helloworldppat */ = {
+		DE7E567A19E3235800C4EF2D /* InstaAid */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DE7E56B019E3235800C4EF2D /* Build configuration list for PBXNativeTarget "helloworldppat" */;
+			buildConfigurationList = DE7E56B019E3235800C4EF2D /* Build configuration list for PBXNativeTarget "InstaAid" */;
 			buildPhases = (
 				DE7E567719E3235800C4EF2D /* Sources */,
 				DE7E567819E3235800C4EF2D /* Frameworks */,
@@ -306,14 +306,14 @@
 			);
 			dependencies = (
 			);
-			name = helloworldppat;
+			name = InstaAid;
 			productName = helloworldppat;
-			productReference = DE7E567B19E3235800C4EF2D /* helloworldppat.app */;
+			productReference = DE7E567B19E3235800C4EF2D /* InstaAid.app */;
 			productType = "com.apple.product-type.application";
 		};
-		DE7E569E19E3235800C4EF2D /* helloworldppatTests */ = {
+		DE7E569E19E3235800C4EF2D /* InstaAidTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DE7E56B319E3235800C4EF2D /* Build configuration list for PBXNativeTarget "helloworldppatTests" */;
+			buildConfigurationList = DE7E56B319E3235800C4EF2D /* Build configuration list for PBXNativeTarget "InstaAidTests" */;
 			buildPhases = (
 				DE7E569B19E3235800C4EF2D /* Sources */,
 				DE7E569C19E3235800C4EF2D /* Frameworks */,
@@ -324,9 +324,9 @@
 			dependencies = (
 				DE7E56A519E3235800C4EF2D /* PBXTargetDependency */,
 			);
-			name = helloworldppatTests;
+			name = InstaAidTests;
 			productName = helloworldppatTests;
-			productReference = DE7E569F19E3235800C4EF2D /* helloworldppatTests.xctest */;
+			productReference = DE7E569F19E3235800C4EF2D /* InstaAidTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -346,7 +346,7 @@
 					};
 				};
 			};
-			buildConfigurationList = DE7E567619E3235800C4EF2D /* Build configuration list for PBXProject "helloworldppat" */;
+			buildConfigurationList = DE7E567619E3235800C4EF2D /* Build configuration list for PBXProject "InstaAid" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -359,8 +359,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				DE7E567A19E3235800C4EF2D /* helloworldppat */,
-				DE7E569E19E3235800C4EF2D /* helloworldppatTests */,
+				DE7E567A19E3235800C4EF2D /* InstaAid */,
+				DE7E569E19E3235800C4EF2D /* InstaAidTests */,
 			);
 		};
 /* End PBXProject section */
@@ -442,7 +442,7 @@
 /* Begin PBXTargetDependency section */
 		DE7E56A519E3235800C4EF2D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = DE7E567A19E3235800C4EF2D /* helloworldppat */;
+			target = DE7E567A19E3235800C4EF2D /* InstaAid */;
 			targetProxy = DE7E56A419E3235800C4EF2D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -568,11 +568,11 @@
 					"$(PROJECT_DIR)/helloworldppat",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "helloworldppat/helloworldppat-Prefix.pch";
-				INFOPLIST_FILE = "helloworldppat/helloworldppat-Info.plist";
+				GCC_PREFIX_HEADER = "helloworldppat/InstaAid-Prefix.pch";
+				INFOPLIST_FILE = "helloworldppat/InstaAid-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0.2;
 				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = InstaAid;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
@@ -592,11 +592,11 @@
 					"$(PROJECT_DIR)/helloworldppat",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "helloworldppat/helloworldppat-Prefix.pch";
-				INFOPLIST_FILE = "helloworldppat/helloworldppat-Info.plist";
+				GCC_PREFIX_HEADER = "helloworldppat/InstaAid-Prefix.pch";
+				INFOPLIST_FILE = "helloworldppat/InstaAid-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0.2;
 				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = InstaAid;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
@@ -619,7 +619,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "helloworldppatTests/helloworldppatTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = InstaAidTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -637,7 +637,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "helloworldppat/helloworldppat-Prefix.pch";
 				INFOPLIST_FILE = "helloworldppatTests/helloworldppatTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = InstaAidTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -646,7 +646,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DE7E567619E3235800C4EF2D /* Build configuration list for PBXProject "helloworldppat" */ = {
+		DE7E567619E3235800C4EF2D /* Build configuration list for PBXProject "InstaAid" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DE7E56AE19E3235800C4EF2D /* Debug */,
@@ -655,7 +655,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DE7E56B019E3235800C4EF2D /* Build configuration list for PBXNativeTarget "helloworldppat" */ = {
+		DE7E56B019E3235800C4EF2D /* Build configuration list for PBXNativeTarget "InstaAid" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DE7E56B119E3235800C4EF2D /* Debug */,
@@ -664,7 +664,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DE7E56B319E3235800C4EF2D /* Build configuration list for PBXNativeTarget "helloworldppatTests" */ = {
+		DE7E56B319E3235800C4EF2D /* Build configuration list for PBXNativeTarget "InstaAidTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DE7E56B419E3235800C4EF2D /* Debug */,

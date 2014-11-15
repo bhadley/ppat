@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:helloworldppat.xcodeproj">
+      location = "self:InstaAid.xcodeproj">
    </FileRef>
 </Workspace>

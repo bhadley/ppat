@@ -36,6 +36,7 @@
     Firebase *fb2 = [[Firebase alloc] initWithUrl:[NSString stringWithFormat:@"%@/%@", @"https://bostonhome.firebaseio.com/requests/", @"Margaret"]];
     [fb2 removeValue];
      */
+
     
 }
 
@@ -56,6 +57,19 @@
 }
 */
 
+
+
+
+- (IBAction)emergency:(id)sender {
+    NSLog(@"bringWater PRESSED");
+    [self requestForUserID:@"Margaret" withRequest:@"EMERGENCY!! Send help immediately!!!"];
+
+}
+
+
+
+
+
 - (IBAction)bringWater:(id)sender {
     NSLog(@"bringWater PRESSED");
     [self requestForUserID:@"Margaret" withRequest:@"Bring water"];
@@ -74,7 +88,9 @@
 }
 
 - (IBAction)videoChat:(id)sender {
-    [self requestForUserID:@"Margaret" withRequest:@"video"];
+    NSURL *url = [NSURL URLWithString:@"facetime://ppat-teammargaret@mit.edu"];
+    [[UIApplication sharedApplication] openURL:url];
+    //[self requestForUserID:@"Margaret" withRequest:@"video"];
 }
 
 - (IBAction)sendNurse:(id)sender {

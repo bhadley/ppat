@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "DE7E567A19E3235800C4EF2D"
-               BuildableName = "helloworldppat.app"
-               BlueprintName = "helloworldppat"
-               ReferencedContainer = "container:helloworldppat.xcodeproj">
+               BuildableName = "InstaAid.app"
+               BlueprintName = "InstaAid"
+               ReferencedContainer = "container:InstaAid.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "DE7E569E19E3235800C4EF2D"
-               BuildableName = "helloworldppatTests.xctest"
-               BlueprintName = "helloworldppatTests"
-               ReferencedContainer = "container:helloworldppat.xcodeproj">
+               BuildableName = "InstaAidTests.xctest"
+               BlueprintName = "InstaAidTests"
+               ReferencedContainer = "container:InstaAid.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -43,9 +43,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "DE7E567A19E3235800C4EF2D"
-            BuildableName = "helloworldppat.app"
-            BlueprintName = "helloworldppat"
-            ReferencedContainer = "container:helloworldppat.xcodeproj">
+            BuildableName = "InstaAid.app"
+            BlueprintName = "InstaAid"
+            ReferencedContainer = "container:InstaAid.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "DE7E567A19E3235800C4EF2D"
-            BuildableName = "helloworldppat.app"
-            BlueprintName = "helloworldppat"
-            ReferencedContainer = "container:helloworldppat.xcodeproj">
+            BuildableName = "InstaAid.app"
+            BlueprintName = "InstaAid"
+            ReferencedContainer = "container:InstaAid.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -80,9 +80,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "DE7E567A19E3235800C4EF2D"
-            BuildableName = "helloworldppat.app"
-            BlueprintName = "helloworldppat"
-            ReferencedContainer = "container:helloworldppat.xcodeproj">
+            BuildableName = "InstaAid.app"
+            BlueprintName = "InstaAid"
+            ReferencedContainer = "container:InstaAid.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

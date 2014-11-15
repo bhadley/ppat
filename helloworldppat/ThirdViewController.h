@@ -13,18 +13,21 @@
 
 
 
-
+- (IBAction)emergency:(id)sender;
 
 - (IBAction)bringWater:(id)sender;
 
-- (IBAction)needMedications:(id)sender;
-
-- (IBAction)getInOutBed:(id)sender;
+- (IBAction)sendNurse:(id)sender;
 
 - (IBAction)videoChat:(id)sender;
 
 - (IBAction)sendAid:(id)sender;
 
-- (IBAction)sendNurse:(id)sender;
+
+//- (IBAction)needMedications:(id)sender;
+
+//- (IBAction)getInOutBed:(id)sender;
+
+
 
 @end
