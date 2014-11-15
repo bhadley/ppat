@@ -21,6 +21,8 @@
 		DE2E0A791A032DD300E81B30 /* william.png in Resources */ = {isa = PBXBuildFile; fileRef = DE2E0A751A032DD300E81B30 /* william.png */; };
 		DE2E0A7D1A032FCD00E81B30 /* videochat.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DE2E0A7A1A032FCD00E81B30 /* videochat.jpg */; };
 		DE2E0A7E1A032FCD00E81B30 /* videochatBig.png in Resources */ = {isa = PBXBuildFile; fileRef = DE2E0A7B1A032FCD00E81B30 /* videochatBig.png */; };
+		DE3973721A164233005105B8 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE3973701A164233005105B8 /* Main_iPad.storyboard */; };
+		DE3973741A16D90E005105B8 /* redx.png in Resources */ = {isa = PBXBuildFile; fileRef = DE3973731A16D90E005105B8 /* redx.png */; };
 		DE5AC3A81A0342730053B7DD /* videochatSmall.png in Resources */ = {isa = PBXBuildFile; fileRef = DE5AC3A71A0342730053B7DD /* videochatSmall.png */; };
 		DE5AC3AA1A051D470053B7DD /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DE5AC3A91A051D470053B7DD /* libicucore.dylib */; };
 		DE5AC3AC1A051D510053B7DD /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DE5AC3AB1A051D510053B7DD /* libc++.dylib */; };
@@ -35,7 +37,6 @@
 		DE7E568B19E3235800C4EF2D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DE7E568A19E3235800C4EF2D /* main.m */; };
 		DE7E568F19E3235800C4EF2D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DE7E568E19E3235800C4EF2D /* AppDelegate.m */; };
 		DE7E569219E3235800C4EF2D /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE7E569019E3235800C4EF2D /* Main_iPhone.storyboard */; };
-		DE7E569519E3235800C4EF2D /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE7E569319E3235800C4EF2D /* Main_iPad.storyboard */; };
 		DE7E569A19E3235800C4EF2D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE7E569919E3235800C4EF2D /* Images.xcassets */; };
 		DE7E56A119E3235800C4EF2D /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE7E56A019E3235800C4EF2D /* XCTest.framework */; };
 		DE7E56A219E3235800C4EF2D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE7E567E19E3235800C4EF2D /* Foundation.framework */; };
@@ -78,6 +79,8 @@
 		DE2E0A751A032DD300E81B30 /* william.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = william.png; sourceTree = "<group>"; };
 		DE2E0A7A1A032FCD00E81B30 /* videochat.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = videochat.jpg; sourceTree = "<group>"; };
 		DE2E0A7B1A032FCD00E81B30 /* videochatBig.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = videochatBig.png; sourceTree = "<group>"; };
+		DE3973711A164233005105B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		DE3973731A16D90E005105B8 /* redx.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redx.png; sourceTree = "<group>"; };
 		DE5AC3A71A0342730053B7DD /* videochatSmall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = videochatSmall.png; sourceTree = "<group>"; };
 		DE5AC3A91A051D470053B7DD /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
 		DE5AC3AB1A051D510053B7DD /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
@@ -97,7 +100,6 @@
 		DE7E568D19E3235800C4EF2D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DE7E568E19E3235800C4EF2D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		DE7E569119E3235800C4EF2D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
-		DE7E569419E3235800C4EF2D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		DE7E569919E3235800C4EF2D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DE7E569F19E3235800C4EF2D /* helloworldppatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = helloworldppatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE7E56A019E3235800C4EF2D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -194,7 +196,7 @@
 				DE7E568D19E3235800C4EF2D /* AppDelegate.h */,
 				DE7E568E19E3235800C4EF2D /* AppDelegate.m */,
 				DE7E569019E3235800C4EF2D /* Main_iPhone.storyboard */,
-				DE7E569319E3235800C4EF2D /* Main_iPad.storyboard */,
+				DE3973701A164233005105B8 /* Main_iPad.storyboard */,
 				DEACC25919FC36DC00DE339D /* UrgentTableViewCell.h */,
 				DEACC25A19FC36DC00DE339D /* UrgentTableViewCell.m */,
 				DEACC25619FC366000DE339D /* UrgentTableViewController.h */,
@@ -241,6 +243,7 @@
 		DE7E56CE19E743F500C4EF2D /* pics */ = {
 			isa = PBXGroup;
 			children = (
+				DE3973731A16D90E005105B8 /* redx.png */,
 				DE5AC3A71A0342730053B7DD /* videochatSmall.png */,
 				DE2E0A7A1A032FCD00E81B30 /* videochat.jpg */,
 				DE2E0A7B1A032FCD00E81B30 /* videochatBig.png */,
@@ -344,8 +347,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE7E569519E3235800C4EF2D /* Main_iPad.storyboard in Resources */,
 				DE2E0A771A032DD300E81B30 /* laura.png in Resources */,
+				DE3973721A164233005105B8 /* Main_iPad.storyboard in Resources */,
 				DE7E569A19E3235800C4EF2D /* Images.xcassets in Resources */,
 				DE2E0A7D1A032FCD00E81B30 /* videochat.jpg in Resources */,
 				DE25BA751A1307A80028194E /* sendNurse.png in Resources */,
@@ -358,6 +361,7 @@
 				DE7E56DA19E7455800C4EF2D /* facetime.png in Resources */,
 				DE25BA711A13078C0028194E /* needMeds.png in Resources */,
 				DEBECA4519E75F9D00501D74 /* icon.png in Resources */,
+				DE3973741A16D90E005105B8 /* redx.png in Resources */,
 				DE25BA6F1A1307800028194E /* getInOutBed.png in Resources */,
 				DE2E0A791A032DD300E81B30 /* william.png in Resources */,
 				DE2E0A7E1A032FCD00E81B30 /* videochatBig.png in Resources */,
@@ -414,6 +418,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		DE3973701A164233005105B8 /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DE3973711A164233005105B8 /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
 		DE7E568719E3235800C4EF2D /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -428,14 +440,6 @@
 				DE7E569119E3235800C4EF2D /* Base */,
 			);
 			name = Main_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		DE7E569319E3235800C4EF2D /* Main_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DE7E569419E3235800C4EF2D /* Base */,
-			);
-			name = Main_iPad.storyboard;
 			sourceTree = "<group>";
 		};
 		DE7E56A919E3235800C4EF2D /* InfoPlist.strings */ = {
@@ -536,7 +540,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "helloworldppat/helloworldppat-Prefix.pch";
 				INFOPLIST_FILE = "helloworldppat/helloworldppat-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0.2;
 				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -560,7 +564,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "helloworldppat/helloworldppat-Prefix.pch";
 				INFOPLIST_FILE = "helloworldppat/helloworldppat-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0.2;
 				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
