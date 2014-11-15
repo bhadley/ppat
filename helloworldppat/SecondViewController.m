@@ -9,6 +9,7 @@
 #import "SecondViewController.h"
 #import "utils.h"
 #import <Firebase/Firebase.h>
+#import "ThirdViewController.h"
 
 @interface SecondViewController ()
 
@@ -40,12 +41,25 @@
         
     }];
     
+//    Firebase *userRefRequest = [[Firebase alloc] initWithUrl:@"https://bostonhome.firebaseio.com/requests"];
+//    [userRefRequest observeEventType:FEventTypeChildRemoved withBlock:^(FDataSnapshot *snapshot) {
+        
+        //NSString *userDeleted = snapshot.name;
+//        if ([snapshot.name  isEqual: @"Margaret"]){
+//            ThirdViewController *tc = [[UIStoryboard storyboardWithName:@"Main_iPad" bundle:nil] instantiateViewControllerWithIdentifier:@"ResidentView"];
+//            [self.navigationController pushViewController:tc animated:YES];
+            //[self performSegueWithIdentifier: @"backToRequest" sender: self];
+
+ //       }
+        
+  //  }];
+    
     
 }
 
 
 - (IBAction)cancelRequestCall:(id)sender{
-
+    
     NSString *userID = @"Margaret";
     Firebase *fb = [[Firebase alloc] initWithUrl:[NSString stringWithFormat:@"%@/%@", @"https://bostonhome.firebaseio.com/requests/", userID]];
     [fb removeValue];

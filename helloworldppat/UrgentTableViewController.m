@@ -201,6 +201,7 @@
     }
     
     cell.backgroundColor = [self colorWithHexString:@"FF4D4D"];//FF8566
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     /*
     if ( [[self.isUrgent objectAtIndex: [indexPath row] ]  isEqual: @"y"]) {
         cell.backgroundColor = [self colorWithHexString:@"FF8D71"];
@@ -226,7 +227,7 @@
                          [self.residentImages objectAtIndex: [indexPath row]]];
     
     cell.residentImage.image = residentPhoto;
-    
+    cell.processRequest.hidden = FALSE;
     return cell;
 }
 
