@@ -7,12 +7,40 @@
 //
 
 #import "AppDelegate.h"
+#import <Firebase/Firebase.h>
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
-    // Override point for customization after application launch.
+{    
+    /*NSString *username = [[NSUserDefaults standardUserDefaults] stringForKey:@"Username"];
+    
+    NSLog(@"username: %@", username);
+    
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main_iPad" bundle:nil];
+    UIViewController *vc;*/
+    
+    Firebase *myRootRef = [[Firebase alloc] initWithUrl:@"https://bostonhome.firebaseio.com"];
+    NSDictionary *post1 = @{
+                            //@"userID":userID,
+                            @"text": @"hi",
+                            };
+    Firebase *post1Ref = [myRootRef childByAppendingPath: @"Laura"];
+    [myRootRef setValue: @"hi"];
+    NSLog(@"writing to fb2 in appdelegate");
+    
+    /*if([username  isEqual: @"Nurse"]) {
+        vc = [sb instantiateViewControllerWithIdentifier:@"NurseView"];
+    } else if(username == nil) {
+        vc = [sb instantiateViewControllerWithIdentifier:@"CreateAccountView"];
+    } else {
+        vc = [sb instantiateViewControllerWithIdentifier:@"ResidentView"];
+    }
+    
+    //vc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.rootViewController = vc;
+    [self.window makeKeyAndVisible];*/
     return YES;
 }
 							

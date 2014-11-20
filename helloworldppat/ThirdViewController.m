@@ -16,6 +16,8 @@
 
 @implementation ThirdViewController
 
+@synthesize username = _username;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -36,7 +38,9 @@
     Firebase *fb2 = [[Firebase alloc] initWithUrl:[NSString stringWithFormat:@"%@/%@", @"https://bostonhome.firebaseio.com/requests/", @"Margaret"]];
     [fb2 removeValue];
      */
-
+    self.username = [[NSUserDefaults standardUserDefaults] stringForKey:@"Username"];
+    
+    NSLog(@"username: %@", self.username);
     
 }
 
@@ -62,7 +66,7 @@
 
 - (IBAction)emergency:(id)sender {
     NSLog(@"bringWater PRESSED");
-    [self requestForUserID:@"Margaret" withRequest:@"EMERGENCY!! Send help immediately!!!"];
+    [self requestForUserID:self.username withRequest:@"EMERGENCY!! Send help immediately!!!"];
 
 }
 
@@ -72,19 +76,19 @@
 
 - (IBAction)bringWater:(id)sender {
     NSLog(@"bringWater PRESSED");
-    [self requestForUserID:@"Margaret" withRequest:@"Bring water"];
+    [self requestForUserID:self.username withRequest:@"Bring water"];
 }
 
 - (IBAction)needMedications:(id)sender {
-    [self requestForUserID:@"Margaret" withRequest:@"Need Medications"];
+    [self requestForUserID:self.username withRequest:@"Need Medications"];
 }
 
 - (IBAction)getInOutBed:(id)sender {
-    [self requestForUserID:@"Margaret" withRequest:@"Would like to get in/out of bed"];
+    [self requestForUserID:self.username withRequest:@"Would like to get in/out of bed"];
 }
 
 - (IBAction)sendAid:(id)sender {
-      [self requestForUserID:@"Margaret" withRequest:@"Send Aid"];
+      [self requestForUserID:self.username withRequest:@"Send Aid"];
 }
 
 - (IBAction)videoChat:(id)sender {
@@ -94,7 +98,7 @@
 }
 
 - (IBAction)sendNurse:(id)sender {
-    [self requestForUserID:@"Margaret" withRequest:@"Send a nurse"];
+    [self requestForUserID:self.username withRequest:@"Send a nurse"];
 }
 
 

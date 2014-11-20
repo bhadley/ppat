@@ -28,6 +28,8 @@
 
 //- (IBAction)getInOutBed:(id)sender;
 
+@property (nonatomic, strong) NSString *username;
+
 
 
 @end

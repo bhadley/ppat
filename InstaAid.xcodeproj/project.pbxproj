@@ -59,6 +59,7 @@
 		DEACC25B19FC36DC00DE339D /* UrgentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DEACC25A19FC36DC00DE339D /* UrgentTableViewCell.m */; };
 		DEBECA4519E75F9D00501D74 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = DEBECA4419E75F9D00501D74 /* icon.png */; };
 		DECD4C651A0542E800315667 /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DECD4C641A0542E800315667 /* Firebase.framework */; };
+		DEDBA9231A1D6FE7002C27F8 /* CreateAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDBA9221A1D6FE7002C27F8 /* CreateAccountViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -134,6 +135,8 @@
 		DEACC25A19FC36DC00DE339D /* UrgentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UrgentTableViewCell.m; sourceTree = "<group>"; };
 		DEBECA4419E75F9D00501D74 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		DECD4C641A0542E800315667 /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Firebase.framework; path = helloworldppat/Firebase.framework; sourceTree = "<group>"; };
+		DEDBA9211A1D6FE7002C27F8 /* CreateAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateAccountViewController.h; sourceTree = "<group>"; };
+		DEDBA9221A1D6FE7002C27F8 /* CreateAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateAccountViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +213,8 @@
 				DE3973821A16F857005105B8 /* SendTextViewController.h */,
 				DE5AC3BD1A052BF00053B7DD /* utils.h */,
 				DE5AC3BE1A052BF00053B7DD /* utils.m */,
+				DEDBA9211A1D6FE7002C27F8 /* CreateAccountViewController.h */,
+				DEDBA9221A1D6FE7002C27F8 /* CreateAccountViewController.m */,
 				DE7E568D19E3235800C4EF2D /* AppDelegate.h */,
 				DE7E568E19E3235800C4EF2D /* AppDelegate.m */,
 				DE7E569019E3235800C4EF2D /* Main_iPhone.storyboard */,
@@ -426,6 +431,7 @@
 				DE5AC3BF1A052BF00053B7DD /* utils.m in Sources */,
 				DEACC25819FC366000DE339D /* UrgentTableViewController.m in Sources */,
 				DE7E568B19E3235800C4EF2D /* main.m in Sources */,
+				DEDBA9231A1D6FE7002C27F8 /* CreateAccountViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
