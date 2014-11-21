@@ -14,6 +14,7 @@
 @property (nonatomic, strong) IBOutlet UILabel *textLabel;
 @property (nonatomic, strong) IBOutlet UILabel *userIDHiddenLabel;
 @property (nonatomic, strong) IBOutlet UIButton *processRequest;
+@property (nonatomic, strong) IBOutlet UIButton *cancelRequest;
 
 - (IBAction)cancelRequest:(id)sender;
 

@@ -19,7 +19,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JI0-3o-vT9">
                                 <rect key="frame" x="44" y="424" width="300" height="300"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" image="video.png" backgroundImage="4A2CEB4F-BB9A-400F-98A3-C05C89209340">
+                                <state key="normal" image="video.png" backgroundImage="306BFCEA-F426-4AA6-AEF4-9127EA70D26C">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -91,7 +91,7 @@
                                     <segue destination="lgf-Sq-dzy" kind="modal" id="sBu-TN-XLG"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iTB-tb-idX">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iTB-tb-idX">
                                 <rect key="frame" x="16" y="64" width="46" height="30"/>
                                 <state key="normal" title="Button">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -204,7 +204,7 @@
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C8f-g1-MME"/>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f2b-qs-nSq"/>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ood-Oo-qRO">
-                                            <rect key="frame" x="714" y="38" width="168" height="48"/>
+                                            <rect key="frame" x="714" y="37" width="168" height="48"/>
                                             <color key="backgroundColor" red="0.79870854589999996" green="0.0" blue="0.0086667914930000003" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                             <color key="tintColor" red="0.72000558039999996" green="0.72000558039999996" blue="0.72000558039999996" alpha="1" colorSpace="calibratedRGB"/>
@@ -221,8 +221,11 @@
                                                 <action selector="requestProcessed:" destination="QJo-CL-Ptm" eventType="touchUpInside" id="pFj-wm-b3f"/>
                                             </connections>
                                         </button>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RHp-oK-Mco">
+                                            <rect key="frame" x="36" y="11" width="100" height="100"/>
+                                        </imageView>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gwH-gO-ben">
-                                            <rect key="frame" x="907" y="37" width="47" height="48"/>
+                                            <rect key="frame" x="909" y="37" width="47" height="48"/>
                                             <state key="normal" image="redx.png">
                                                 <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="titleShadowColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -231,9 +234,6 @@
                                                 <action selector="cancelRequest:" destination="QJo-CL-Ptm" eventType="touchUpInside" id="pBK-q0-nBx"/>
                                             </connections>
                                         </button>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RHp-oK-Mco">
-                                            <rect key="frame" x="36" y="11" width="100" height="100"/>
-                                        </imageView>
                                     </subviews>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -243,6 +243,7 @@
                                 </tableViewCellContentView>
                                 <color key="tintColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
+                                    <outlet property="cancelRequest" destination="gwH-gO-ben" id="rX3-Mc-Ypo"/>
                                     <outlet property="nameLabel" destination="iPb-Uw-OF6" id="RRC-TA-S7l"/>
                                     <outlet property="processRequest" destination="Ood-Oo-qRO" id="VDd-Wn-HOD"/>
                                     <outlet property="residentImage" destination="RHp-oK-Mco" id="RXn-re-a5z"/>
@@ -355,7 +356,7 @@
                                 </state>
                                 <connections>
                                     <action selector="sendTextMsgRequest:" destination="lgf-Sq-dzy" eventType="touchUpInside" id="zmL-Ie-xaP"/>
-                                    <segue destination="5TP-PH-v0z" kind="push" id="4vP-wC-KfH"/>
+                                    <segue destination="5TP-PH-v0z" kind="modal" id="4vP-wC-KfH"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xe1-6G-RYb">
@@ -479,7 +480,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="4A2CEB4F-BB9A-400F-98A3-C05C89209340" width="212" height="212">
+        <image name="306BFCEA-F426-4AA6-AEF4-9127EA70D26C" width="212" height="212">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPj9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQsLzI4O1UkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -3529,7 +3530,7 @@ AshXAALIXAACyGQAAshnAALIeQACyHwAAsiBAAAAAAAABAEAAAAAAAAAQgAAAAAAAAAAAAAAAAACyIM
 </mutableData>
         </image>
         <image name="bringWater.png" width="300" height="300"/>
-        <image name="emergency.png" width="299" height="300"/>
+        <image name="emergency.png" width="300" height="300"/>
         <image name="hangup.png" width="256" height="152"/>
         <image name="hourglass.png" width="256" height="256"/>
         <image name="redx.png" width="128" height="128"/>

@@ -92,10 +92,16 @@
         NSString *userID = snapshot.name; // snapshot.value[@"userID"];
         NSInteger indexIntoArray = [self.namesFB indexOfObject:userID];
         NSLog(@"%ld", (long)indexIntoArray);
+        NSString *picture;
+        if(indexIntoArray < [self.picturesFB count] && indexIntoArray >= 0) {
+            
+            //NSString *room = self.roomsFB[indexIntoArray];
+            picture = self.picturesFB[indexIntoArray];
+        } else {
+            picture = @"defaulticon.png";
+            
+        }
         NSString *name = snapshot.name;
-        //NSString *room = self.roomsFB[indexIntoArray];
-        NSString *picture = self.picturesFB[indexIntoArray];
-        
         //NSLog(@"%@", snapshot.value[@"isUrgent"]);
         
         //if([snapshot.value[@"isUrgent"]  isEqual: @"n"]) {

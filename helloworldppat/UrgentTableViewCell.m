@@ -16,7 +16,7 @@
 @synthesize residentImage = _residentImage;
 @synthesize userIDHiddenLabel = _userIDHiddenLabel;
 @synthesize processRequest = _processRequest;
-
+@synthesize cancelRequest = _cancelRequest;
 
 
 - (void)awakeFromNib {
@@ -49,9 +49,8 @@
                             };
     [post1Ref setValue: post1];
     self.backgroundColor = [UIColor greenColor];
-    NSLog(@"a");
     [self processRequest].hidden=TRUE;
-    NSLog(@"b");
+    //[self cancelRequest].hidden=FALSE;
 
 }
 

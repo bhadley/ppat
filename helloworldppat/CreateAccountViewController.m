@@ -50,10 +50,15 @@
     
     Firebase *myRootRef = [[Firebase alloc] initWithUrl:@"https://bostonhome.firebaseio.com/users"];
     
+    NSString *photo = @"defaulticon.png";
+    if([_username.text  isEqual: @"Margaret"]) {
+        photo = @"margaret.png";
+    }
+    
     
     NSDictionary *post1 = @{
                             @"name":_username.text,
-                            @"pic":@"margaret.png"
+                            @"pic":photo,
                             };
     Firebase *post1Ref = [myRootRef childByAppendingPath: _username.text];
     [post1Ref setValue: post1];
