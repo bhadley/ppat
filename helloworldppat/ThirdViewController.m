@@ -91,6 +91,14 @@
       [self requestForUserID:self.username withRequest:@"Send Aid"];
 }
 
+- (IBAction)logout:(id)sender {
+    [[NSUserDefaults standardUserDefaults] setValue:nil forKey:@"Username"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"CreateAccountView"];
+    NSLog(@"logging out");
+    [self presentViewController:vc animated:YES completion:nil];
+}
+
 - (IBAction)videoChat:(id)sender {
     NSURL *url = [NSURL URLWithString:@"facetime://ppat-teammargaret@mit.edu"];
     [[UIApplication sharedApplication] openURL:url];

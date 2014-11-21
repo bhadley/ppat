@@ -13,23 +13,14 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {    
-    /*NSString *username = [[NSUserDefaults standardUserDefaults] stringForKey:@"Username"];
+    NSString *username = [[NSUserDefaults standardUserDefaults] stringForKey:@"Username"];
     
     NSLog(@"username: %@", username);
     
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main_iPad" bundle:nil];
-    UIViewController *vc;*/
+    UIViewController *vc;
     
-    Firebase *myRootRef = [[Firebase alloc] initWithUrl:@"https://bostonhome.firebaseio.com"];
-    NSDictionary *post1 = @{
-                            //@"userID":userID,
-                            @"text": @"hi",
-                            };
-    Firebase *post1Ref = [myRootRef childByAppendingPath: @"Laura"];
-    [myRootRef setValue: @"hi"];
-    NSLog(@"writing to fb2 in appdelegate");
-    
-    /*if([username  isEqual: @"Nurse"]) {
+    if([username  isEqual: @"Nurse"]) {
         vc = [sb instantiateViewControllerWithIdentifier:@"NurseView"];
     } else if(username == nil) {
         vc = [sb instantiateViewControllerWithIdentifier:@"CreateAccountView"];
@@ -40,7 +31,7 @@
     //vc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.rootViewController = vc;
-    [self.window makeKeyAndVisible];*/
+    [self.window makeKeyAndVisible];
     return YES;
 }
 							

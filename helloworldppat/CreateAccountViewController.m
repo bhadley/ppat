@@ -7,6 +7,7 @@
 //
 
 #import "CreateAccountViewController.h"
+#import <Firebase/Firebase.h>
 
 @interface CreateAccountViewController ()
 
@@ -46,6 +47,25 @@
 
     [[NSUserDefaults standardUserDefaults] setValue:_username.text forKey:@"Username"];
      [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    Firebase *myRootRef = [[Firebase alloc] initWithUrl:@"https://bostonhome.firebaseio.com/users"];
+    
+    
+    NSDictionary *post1 = @{
+                            @"name":_username.text,
+                            @"pic":@"margaret.png"
+                            };
+    Firebase *post1Ref = [myRootRef childByAppendingPath: _username.text];
+    [post1Ref setValue: post1];
+    
+    UIViewController *vc;
+    if ([_username.text  isEqual: @"Nurse"]) {
+        vc = [self.storyboard instantiateViewControllerWithIdentifier:@"NurseView"];
+    } else {
+        vc = [self.storyboard instantiateViewControllerWithIdentifier:@"ResidentView"];
+    }
+    
+    [self presentViewController:vc animated:YES completion:nil];
 }
  
 

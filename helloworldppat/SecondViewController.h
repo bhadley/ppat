@@ -14,4 +14,6 @@
 @property (nonatomic, strong) IBOutlet UILabel *requestStatus;
 @property (weak, nonatomic) IBOutlet UIImageView *requestStatusIcon;
 
+@property (nonatomic, strong) NSString *username;
+
 @end

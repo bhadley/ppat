@@ -65,7 +65,7 @@
     
     self.idsFB = [[NSMutableArray alloc] init];
     self.namesFB = [[NSMutableArray alloc] init];
-    self.roomsFB = [[NSMutableArray alloc] init];
+    //self.roomsFB = [[NSMutableArray alloc] init];
     self.picturesFB = [[NSMutableArray alloc] init];
     
     // Create a reference to a Firebase location
@@ -75,10 +75,9 @@
     for (FDataSnapshot* childSnap in snapshot.children) {
         [self.idsFB addObject:childSnap.name];
         [self.namesFB addObject:childSnap.value[@"name"]];
-        [self.roomsFB addObject:childSnap.value[@"room"]];
-        [self.picturesFB addObject:childSnap.value[@"picture"]];
+        //[self.roomsFB addObject:childSnap.value[@"room"]];
+        [self.picturesFB addObject:childSnap.value[@"pic"]];
     }
-        
     }];
     
     
@@ -94,7 +93,7 @@
         NSInteger indexIntoArray = [self.namesFB indexOfObject:userID];
         NSLog(@"%ld", (long)indexIntoArray);
         NSString *name = snapshot.name;
-        NSString *room = self.roomsFB[indexIntoArray];
+        //NSString *room = self.roomsFB[indexIntoArray];
         NSString *picture = self.picturesFB[indexIntoArray];
         
         //NSLog(@"%@", snapshot.value[@"isUrgent"]);
