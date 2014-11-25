@@ -26,6 +26,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    NSTimer* myTimer = [NSTimer scheduledTimerWithTimeInterval: 60 target: self
+                                                      selector: @selector(callAfterTimeout:) userInfo: nil repeats: YES];
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -284,6 +287,25 @@
     cell.residentImage.image = residentPhoto;
     cell.processRequest.hidden = FALSE;
     return cell;
+}
+
+-(void) callAfterTimeout:(NSTimer*) t
+{
+    NSLog(@"checking!");
+    NSURL *scriptUrl = [NSURL URLWithString:@"http://www.google.com"];
+    NSData *data = [NSData dataWithContentsOfURL:scriptUrl];
+    if (data) {
+        NSLog(@"Device is connected to the internet");
+    }
+    else {
+        NSLog(@"Device is not connected to the internet");
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"No network connection"
+                                                        message:@"You must be connected to the internet to use this app."
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+    }
 }
 
 
