@@ -73,6 +73,14 @@
     [fb2 removeValue];
 }
 
+- (IBAction)logout:(id)sender {
+    [[NSUserDefaults standardUserDefaults] setValue:nil forKey:@"Username"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"CreateAccountView"];
+    NSLog(@"logging out");
+    [self presentViewController:vc animated:YES completion:nil];
+}
+
 
 
 /*

@@ -17,7 +17,7 @@
 @synthesize userIDHiddenLabel = _userIDHiddenLabel;
 @synthesize processRequest = _processRequest;
 @synthesize cancelRequest = _cancelRequest;
-
+@synthesize processedStatus = _processedStatus;
 
 - (void)awakeFromNib {
     // Initialization code
@@ -45,11 +45,12 @@
     // Write data to Firebase
     Firebase *post1Ref = [myRootRef childByAppendingPath: userID];
     NSDictionary *post1 = @{
-                            @"text": @"Hello",
+                            @"text": @"Request Processed",
                             };
     [post1Ref setValue: post1];
-    self.backgroundColor = [UIColor greenColor];
-    [self processRequest].hidden=TRUE;
+    //self.backgroundColor = [UIColor greenColor];
+    //[//self processRequest].hidden=TRUE;
+    
     //[self cancelRequest].hidden=FALSE;
 
 }

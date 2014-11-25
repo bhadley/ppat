@@ -14,6 +14,7 @@
 @property (nonatomic, strong) NSMutableArray *names;
 @property (nonatomic, strong) NSMutableArray *textRequests;
 @property (nonatomic, strong) NSMutableArray *isUrgent;
+@property (nonatomic, strong) NSMutableArray *isProcessed;
 
 @property (nonatomic, strong) NSMutableArray *idsFB;
 @property (nonatomic, strong) NSMutableArray *namesFB;

@@ -15,9 +15,9 @@
 @property (nonatomic, strong) IBOutlet UILabel *userIDHiddenLabel;
 @property (nonatomic, strong) IBOutlet UIButton *processRequest;
 @property (nonatomic, strong) IBOutlet UIButton *cancelRequest;
-
+@property (nonatomic, strong) IBOutlet UILabel *processedStatus;
 - (IBAction)cancelRequest:(id)sender;
 
-- (IBAction)requestProcessed:(id)sender;
 
+- (IBAction)requestProcessed:(id)sender;
 @end

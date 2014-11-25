@@ -21,6 +21,7 @@
 @synthesize names = _names;
 @synthesize textRequests = _textRequests;
 @synthesize isUrgent = _isUrgent;
+@synthesize isProcessed = _isProcessed;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -58,6 +59,8 @@
                       @"beth.png",
                       @"william.png", nil];*/
     
+    
+    
     self.names = [[NSMutableArray alloc] init];
     
     self.textRequests = [[NSMutableArray alloc] init];
@@ -67,16 +70,19 @@
     self.namesFB = [[NSMutableArray alloc] init];
     //self.roomsFB = [[NSMutableArray alloc] init];
     self.picturesFB = [[NSMutableArray alloc] init];
+    self.isProcessed = [[NSMutableArray alloc] init];
     
     // Create a reference to a Firebase location
     Firebase *userRef = [[Firebase alloc] initWithUrl:@"https://bostonhome.firebaseio.com/users"];
     [userRef observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
-    
-    for (FDataSnapshot* childSnap in snapshot.children) {
+        for (FDataSnapshot* childSnap in snapshot.children) {
         [self.idsFB addObject:childSnap.name];
         [self.namesFB addObject:childSnap.value[@"name"]];
         //[self.roomsFB addObject:childSnap.value[@"room"]];
         [self.picturesFB addObject:childSnap.value[@"pic"]];
+        
+        
+
     }
     }];
     
@@ -84,14 +90,42 @@
     
     
     // Create a reference to a Firebase location
-    Firebase *myRootRef = [[Firebase alloc] initWithUrl:@"https://bostonhome.firebaseio.com/requests"];
-    [myRootRef observeEventType:FEventTypeChildAdded withBlock:^(FDataSnapshot *snapshot) {
-        
+    Firebase *userRef1 = [[Firebase alloc] initWithUrl:@"https://bostonhome.firebaseio.com/processed"];
+    [userRef1 observeEventType:FEventTypeChildAdded withBlock:^(FDataSnapshot *snapshot) {
+        NSLog(@"is processed!");
         NSLog(@"%@ -> %@", snapshot.name, snapshot.value);
         
         NSString *userID = snapshot.name; // snapshot.value[@"userID"];
-        NSInteger indexIntoArray = [self.namesFB indexOfObject:userID];
+        NSLog(@"%@", userID);
+        NSInteger indexIntoArray = [self.names indexOfObject:userID];
         NSLog(@"%ld", (long)indexIntoArray);
+
+     
+        if(indexIntoArray < [self.isProcessed count] && indexIntoArray >= 0) {
+            [self.isProcessed replaceObjectAtIndex:indexIntoArray withObject:@"true"];
+            NSLog(@"%@",self.isProcessed);
+            NSLog(@"isProcessed now true");
+        } else {
+            NSLog(@"isProcessed not true right now");
+        }
+
+        [self.tableView reloadData];
+        
+    }];
+    
+
+    
+    
+    
+    // Create a reference to a Firebase location
+    Firebase *myRootRef = [[Firebase alloc] initWithUrl:@"https://bostonhome.firebaseio.com/requests"];
+    [myRootRef observeEventType:FEventTypeChildAdded withBlock:^(FDataSnapshot *snapshot) {
+        
+        //NSLog(@"%@ -> %@", snapshot.name, snapshot.value);
+        
+        NSString *userID = snapshot.name; // snapshot.value[@"userID"];
+        NSInteger indexIntoArray = [self.namesFB indexOfObject:userID];
+        //NSLog(@"%ld", (long)indexIntoArray);
         NSString *picture;
         if(indexIntoArray < [self.picturesFB count] && indexIntoArray >= 0) {
             
@@ -109,6 +143,7 @@
             [self.names addObject:name];
             [self.textRequests addObject:snapshot.value[@"text"]];
             [self.residentImages addObject:picture];
+            [self.isProcessed addObject:@"false"];
        /* } else {
             NSInteger firstNo = [self.isUrgent indexOfObject:@"n"];
             if(NSNotFound == firstNo) {
@@ -130,8 +165,8 @@
     
     [myRootRef observeEventType:FEventTypeChildRemoved withBlock:^(FDataSnapshot *snapshot) {
         
-        NSLog(@"Child removed");
-         NSLog(@"%@", snapshot.name);
+        //NSLog(@"Child removed");
+         //NSLog(@"%@", snapshot.name);
         //NSLog(@"%@ -> %@", snapshot.name, snapshot.value[@"userID"]);
         //int userID = [snapshot.value[@"userID"] intValue]; // TODO: Convert
         //int userID = [snapshot.name intValue]; // TODO: Convert
@@ -150,16 +185,16 @@
                 //[self.isUrgent removeObjectAtIndex:i];
                 [self.textRequests removeObjectAtIndex:i];
                 [self.residentImages removeObjectAtIndex:i];
+                [self.isProcessed removeObjectAtIndex:i];
+
             //}
         //}
         
         [self.tableView reloadData];
     }];
-    
- 
-    
-    
+
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -188,12 +223,16 @@
                             objectAtIndex:[indexPath row]];
 
     static NSString *CellIdentifier;
+  
+    NSLog(@"%ld",[indexPath row]);
     
-    if ( [textString  isEqual: @"video"] == 1 ) {
-        CellIdentifier = @"videoTableCell";
+    if ([[self.isProcessed objectAtIndex: [indexPath row]]  isEqual: @"false"])  {
+        CellIdentifier = @"textTableCell";
+        NSLog(@"textTableCell");
     }
     else {
-        CellIdentifier = @"textTableCell";
+         NSLog(@"videoTableCell");
+        CellIdentifier = @"videoTableCell";
     }
     
     UrgentTableViewCell *cell = [tableView
@@ -205,16 +244,27 @@
                 reuseIdentifier:CellIdentifier];
     }
     
-    cell.backgroundColor = [self colorWithHexString:@"FF4D4D"];//FF8566
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+     //cell.backgroundColor = [self colorWithHexString:@"FF4D4D"];
     /*
-    if ( [[self.isUrgent objectAtIndex: [indexPath row] ]  isEqual: @"y"]) {
-        cell.backgroundColor = [self colorWithHexString:@"FF8D71"];
-    }
-    else {
-        cell.backgroundColor = [self colorWithHexString:@"FFFFC0"];
+     if cell.processedStatus.text == @"false" {
+        
     }
      */
+    
+    /*
+     if ([[self.isProcessed objectAtIndex: [indexPath row]]  isEqual: @"false"]) {
+         cell.backgroundColor = [self colorWithHexString:@"FF4D4D"];//red
+        NSLog(@"red background color");
+    }
+    else {
+        cell.backgroundColor = [UIColor greenColor];
+         NSLog(@"green background color");
+    }
+    */
+     
+   
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+
     
     
     // Configure the cell...
