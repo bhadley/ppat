@@ -67,6 +67,8 @@
 - (IBAction)emergency:(id)sender {
     NSLog(@"bringWater PRESSED");
     [self requestForUserID:self.username withRequest:@"EMERGENCY!! Send help immediately!!!"];
+    
+    [self checkInternetConnectivity];
 
 }
 
@@ -77,18 +79,27 @@
 - (IBAction)bringWater:(id)sender {
     NSLog(@"bringWater PRESSED");
     [self requestForUserID:self.username withRequest:@"Bring water"];
+    
+    [self checkInternetConnectivity];
+
 }
 
 - (IBAction)needMedications:(id)sender {
     [self requestForUserID:self.username withRequest:@"Need Medications"];
+    [self checkInternetConnectivity];
+
 }
 
 - (IBAction)getInOutBed:(id)sender {
     [self requestForUserID:self.username withRequest:@"Would like to get in/out of bed"];
+    [self checkInternetConnectivity];
+
 }
 
 - (IBAction)sendAid:(id)sender {
       [self requestForUserID:self.username withRequest:@"Send Aid"];
+    [self checkInternetConnectivity];
+
 }
 
 - (IBAction)logout:(id)sender {
@@ -107,6 +118,45 @@
 
 - (IBAction)sendNurse:(id)sender {
     [self requestForUserID:self.username withRequest:@"Send a nurse"];
+    [self checkInternetConnectivity];
+}
+
+- (IBAction)sendMessage:(id)sender {
+    NSURL *scriptUrl = [NSURL URLWithString:@"http://www.google.com"];
+    NSData *data = [NSData dataWithContentsOfURL:scriptUrl];
+    if (data) {
+        NSLog(@"Device is connected to the internet");
+        UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"SendTextView"];
+        [self presentViewController:vc animated:YES completion:nil];
+    }
+    else {
+        NSLog(@"Device is not connected to the internet");
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"No network connection"
+                                                        message:@"You must be connected to the internet to use this app."
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+    }
+}
+
+- (void)checkInternetConnectivity {
+    NSURL *scriptUrl = [NSURL URLWithString:@"http://www.google.com"];
+    NSData *data = [NSData dataWithContentsOfURL:scriptUrl];
+    if (data) {
+        NSLog(@"Device is connected to the internet");
+        UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"WaitingView"];
+        [self presentViewController:vc animated:YES completion:nil];
+    }
+    else {
+        NSLog(@"Device is not connected to the internet");
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"No network connection"
+                                                        message:@"You must be connected to the internet to use this app."
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+    }
 }
 
 

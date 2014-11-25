@@ -65,7 +65,14 @@
                             @"timestamp":[NSString stringWithFormat:@"%f", timeInMiliseconds]
                             };
     Firebase *post1Ref = [myRootRef childByAppendingPath: userID];
-    [post1Ref setValue: post1];
+    [post1Ref setValue: post1 /*withCompletionBlock:^(NSError *error, Firebase *ref) {
+        if (error) {
+            NSLog(@"error connecting to firebase!");
+            NSLog(@"%@", error);
+        } else {
+            NSLog(@"success connecting to firebase!");
+        }
+    }*/];
     
    // NSString *postId = post1Ref.name;
     

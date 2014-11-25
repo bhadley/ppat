@@ -43,7 +43,6 @@
 
 
 - (IBAction)sendTextMsgRequest:(id)sender {
-    NSLog(@"hi!!!");
     NSString *
     username = [[NSUserDefaults standardUserDefaults] stringForKey:@"Username"];
   
