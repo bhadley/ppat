@@ -576,7 +576,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "helloworldppat/InstaAid-Prefix.pch";
 				INFOPLIST_FILE = "helloworldppat/InstaAid-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
 				PRODUCT_NAME = InstaAid;
 				PROVISIONING_PROFILE = "";
@@ -600,7 +600,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "helloworldppat/InstaAid-Prefix.pch";
 				INFOPLIST_FILE = "helloworldppat/InstaAid-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
 				PRODUCT_NAME = InstaAid;
 				PROVISIONING_PROFILE = "";

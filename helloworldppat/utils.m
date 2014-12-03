@@ -67,7 +67,7 @@
     NSDictionary *post1 = @{
                             //@"userID":userID,
                             @"text": request,
-                            @"timestamp":[NSString stringWithFormat:@"%f", timeInMiliseconds]
+                            @"timestamp":resultString
                             };
     Firebase *post1Ref = [myRootRef childByAppendingPath: userID];
     [post1Ref setValue: post1 /*withCompletionBlock:^(NSError *error, Firebase *ref) {
