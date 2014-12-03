@@ -54,10 +54,15 @@
     Firebase *myRootRef = [[Firebase alloc] initWithUrl:@"https://bostonhome.firebaseio.com/requests"];
     // Write data to Firebase
    // NSArray *persons = [NSArray arrayWithObjects:@"1","video","timestamp"];
-
+    NSLog(@"requestForUserIDhere");
     
     NSTimeInterval timeInMiliseconds = [[NSDate date] timeIntervalSince1970];
-  
+ 
+    NSDate *currentTime = [NSDate date];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"YYYY-MM-dd hh:mm"];
+    NSString *resultString = [dateFormatter stringFromDate: currentTime];
+    NSLog(resultString);
     
     NSDictionary *post1 = @{
                             //@"userID":userID,
