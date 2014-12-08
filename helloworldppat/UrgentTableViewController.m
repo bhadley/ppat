@@ -77,7 +77,7 @@
     self.isProcessed = [[NSMutableArray alloc] init];
     
     // Create a reference to a Firebase location
-    Firebase *userRef = [[Firebase alloc] initWithUrl:@"https://bostonhome.firebaseio.com/users"];
+    Firebase *userRef = [[Firebase alloc] initWithUrl:@"https://tbhdev.firebaseio.com/users"];
     [userRef observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
         for (FDataSnapshot* childSnap in snapshot.children) {
         [self.idsFB addObject:childSnap.name];
@@ -94,7 +94,7 @@
     
     
     // Create a reference to a Firebase location
-    Firebase *userRef1 = [[Firebase alloc] initWithUrl:@"https://bostonhome.firebaseio.com/processed"];
+    Firebase *userRef1 = [[Firebase alloc] initWithUrl:@"https://tbhdev.firebaseio.com/processed"];
     [userRef1 observeEventType:FEventTypeChildAdded withBlock:^(FDataSnapshot *snapshot) {
         NSLog(@"is processed!");
         NSLog(@"%@ -> %@", snapshot.name, snapshot.value);
@@ -122,7 +122,7 @@
     
     
     // Create a reference to a Firebase location
-    Firebase *myRootRef = [[Firebase alloc] initWithUrl:@"https://bostonhome.firebaseio.com/requests"];
+    Firebase *myRootRef = [[Firebase alloc] initWithUrl:@"https://tbhdev.firebaseio.com/requests"];
     [myRootRef observeEventType:FEventTypeChildAdded withBlock:^(FDataSnapshot *snapshot) {
         
         AudioServicesPlaySystemSound (1000);

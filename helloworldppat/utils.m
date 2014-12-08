@@ -51,18 +51,18 @@
 //-(void)sendrequest:(BOOL)urgency forUser:(NSString*)userID
 {
     // Create a reference to a Firebase location
-    Firebase *myRootRef = [[Firebase alloc] initWithUrl:@"https://bostonhome.firebaseio.com/requests"];
+    Firebase *myRootRef = [[Firebase alloc] initWithUrl:@"https://tbhdev.firebaseio.com/requests"];
     // Write data to Firebase
    // NSArray *persons = [NSArray arrayWithObjects:@"1","video","timestamp"];
     NSLog(@"requestForUserIDhere");
     
-    NSTimeInterval timeInMiliseconds = [[NSDate date] timeIntervalSince1970];
+    //NSTimeInterval timeInMiliseconds = [[NSDate date] timeIntervalSince1970];
  
     NSDate *currentTime = [NSDate date];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"YYYY-MM-dd hh:mm"];
+    [dateFormatter setDateFormat:@"YYYY-MM-dd hh:mm:ss"];
     NSString *resultString = [dateFormatter stringFromDate: currentTime];
-    NSLog(resultString);
+   
     
     NSDictionary *post1 = @{
                             //@"userID":userID,
@@ -82,21 +82,47 @@
    // NSString *postId = post1Ref.name;
     
     //[myRootRef childByAutoId:@"Do you have noms? You'll love Firebase."];
-
-}
-- (void)cancelRequestForUser:(NSString*)userID {
     
-    Firebase *fb = [[Firebase alloc] initWithUrl:[NSString stringWithFormat:@"%@/%@", @"https://bostonhome.firebaseio.com/requests/", userID]];
-    [fb removeValue];
+    Firebase *fbRequestLog = [[Firebase alloc] initWithUrl:@"https://tbhdev.firebaseio.com/log"];
+    NSDictionary *post2 = @{
+                            @"user": userID,
+                            @"text": request,
+                            @"timestamp":resultString
+                            };
+
+    
+    Firebase *postRef = [fbRequestLog childByAutoId];
+    [postRef setValue: post2];
+
 }
 
+/*
+- (void)cancelRequestForUser:(NSString*)userID {
+    NSLog(@"user cancelled request");
+    Firebase *fb = [[Firebase alloc] initWithUrl:[NSString stringWithFormat:@"%@/%@", @"https://tbhdev.firebaseio.com/requests/", userID]];
+    [fb removeValue];
+    
+    NSDate *currentTime = [NSDate date];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"YYYY-MM-dd hh:mm"];
+    NSString *resultString = [dateFormatter stringFromDate: currentTime];
+    Firebase *fbRequestLog = [[Firebase alloc] initWithUrl:@"https://tbhdev.firebaseio.com/log"];
+    NSDictionary *post2 = @{@"user":userID,@"text": @"User cancelled request",@"timestamp":resultString};
+    Firebase *postRef = [fbRequestLog childByAutoId];
+    [postRef setValue: post2];
+    
+}
+ */
+
+/*
 -(void)processUserRequest:(NSString*)userID
 //-(void)sendrequest:(BOOL)urgency forUser:(NSString*)userID
 {
     // Create a reference to a Firebase location
-    Firebase *myRootRef = [[Firebase alloc] initWithUrl:@"https://bostonhome.firebaseio.com/processed"];
+    Firebase *myRootRef = [[Firebase alloc] initWithUrl:@"https://tbhdev.firebaseio.com/processed"];
     // Write data to Firebase
     [myRootRef childByAppendingPath: userID];
 }
+*/
 
 @end

@@ -48,7 +48,7 @@
     [[NSUserDefaults standardUserDefaults] setValue:_username.text forKey:@"Username"];
      [[NSUserDefaults standardUserDefaults] synchronize];
     
-    Firebase *myRootRef = [[Firebase alloc] initWithUrl:@"https://bostonhome.firebaseio.com/users"];
+    Firebase *myRootRef = [[Firebase alloc] initWithUrl:@"https://tbhdev.firebaseio.com/users"];
     
     NSString *photo = @"defaulticon.png";
     if([_username.text  isEqual: @"Margaret"]) {
