@@ -49,7 +49,18 @@
     [self requestForUserID:username withRequest:  _requestTxtMsg.text];
 
 }
- 
+
+/*
+- (IBAction)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
+    
+    if([text isEqualToString:@"\n"]) {
+        [self.requestTxtMsg resignFirstResponder];
+        //return NO;
+    }
+    
+    //return YES;
+}
+*/
 
 
 @end

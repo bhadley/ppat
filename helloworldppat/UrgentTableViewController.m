@@ -10,6 +10,7 @@
 #import "UrgentTableViewCell.h"
 #import "utils.h"
 #import <Firebase/Firebase.h>
+#import <AudioToolbox/AudioToolbox.h>
 
 @interface UrgentTableViewController ()
 
@@ -123,6 +124,9 @@
     // Create a reference to a Firebase location
     Firebase *myRootRef = [[Firebase alloc] initWithUrl:@"https://bostonhome.firebaseio.com/requests"];
     [myRootRef observeEventType:FEventTypeChildAdded withBlock:^(FDataSnapshot *snapshot) {
+        
+        AudioServicesPlaySystemSound (1000);
+        NSLog(@"should be playing sound");
         
         //NSLog(@"%@ -> %@", snapshot.name, snapshot.value);
         
