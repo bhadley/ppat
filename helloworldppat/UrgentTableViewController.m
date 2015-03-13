@@ -26,7 +26,11 @@
 
 int requestsNotProcessed = 0;
 NSMutableArray* isProcessedList;
+NSMutableArray* textRequests;
 
+int emergencySoundID = 1030; //sherwood forest
+int normalSoundID = 1027; //minuet
+int soundID = 0;
 bool anyRequestsNotProcessed(){
     return [isProcessedList containsObject:@"false"];
 }
@@ -36,13 +40,24 @@ void systemAudioCallback()
 {
     
     if (anyRequestsNotProcessed() == true) {
+        soundID = normalSoundID;
+        if ([textRequests containsObject:@"EMERGENCY!! Send help immediately!!!"] == true){
+            //NSInteger indexIntoArray = [textRequests indexOfObject:@"EMERGENCY!! Send help immediately!!!"];
+            //NSString *isEmergencyProcessed = [isProcessedList objectAtIndex:indexIntoArray];
+            //if ([isEmergencyProcessed  isEqual: @"false"]) {
+                soundID = emergencySoundID;
+            //}
+        }
+        
         NSLog(@"CONTINUING SOUND!");
-        AudioServicesAddSystemSoundCompletion(1027,
+        AudioServicesDisposeSystemSoundID(emergencySoundID);
+        AudioServicesDisposeSystemSoundID(normalSoundID);
+        AudioServicesAddSystemSoundCompletion(soundID,
                                               NULL,
                                               NULL,
                                               systemAudioCallback,
                                               NULL);
-        AudioServicesPlaySystemSound(1027);
+        AudioServicesPlaySystemSound(soundID);
 
         
     }
@@ -144,7 +159,7 @@ void systemAudioCallback()
             isProcessedList = self.isProcessed;
             //requestsNotProcessed = requestsNotProcessed - 1;
             if (anyRequestsNotProcessed() == false) {
-                AudioServicesDisposeSystemSoundID(1027);
+                AudioServicesDisposeSystemSoundID(soundID);
        
                 NSLog(@"ALL REQUESTS PROCESSED 1");
             }
@@ -194,6 +209,7 @@ void systemAudioCallback()
             [self.isProcessed addObject:@"false"];
             requestsNotProcessed = requestsNotProcessed + 1;
             isProcessedList = self.isProcessed;
+            textRequests = self.textRequests;
             NSLog(@"requestsNotProcessed:%d", requestsNotProcessed);
             systemAudioCallback();
         
@@ -241,11 +257,13 @@ void systemAudioCallback()
                 [self.isProcessed removeObjectAtIndex:i];
                 requestsNotProcessed = requestsNotProcessed - 1;
                 isProcessedList = self.isProcessed;
+                textRequests = self.textRequests;
             //}
         //}
         
         if (anyRequestsNotProcessed() == false) {
-            AudioServicesDisposeSystemSoundID(1027);
+            AudioServicesDisposeSystemSoundID(emergencySoundID);
+            AudioServicesDisposeSystemSoundID(normalSoundID);
             NSLog(@"ALL REQUESTS PROCESSED 2");
 
         }

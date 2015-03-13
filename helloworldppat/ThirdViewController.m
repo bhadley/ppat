@@ -60,7 +60,6 @@
 
 
 - (IBAction)emergency:(id)sender {
-    NSLog(@"bringWater PRESSED");
     [self requestForUserID:self.username withRequest:@"EMERGENCY!! Send help immediately!!!"];
     
     [self checkInternetConnectivity];
