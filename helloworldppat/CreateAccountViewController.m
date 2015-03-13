@@ -8,7 +8,7 @@
 
 #import "CreateAccountViewController.h"
 #import <Firebase/Firebase.h>
-
+#import "utils.h"
 @interface CreateAccountViewController ()
 
 @end
@@ -48,7 +48,7 @@
     [[NSUserDefaults standardUserDefaults] setValue:_username.text forKey:@"Username"];
      [[NSUserDefaults standardUserDefaults] synchronize];
     
-    Firebase *myRootRef = [[Firebase alloc] initWithUrl:@"https://tbhdev.firebaseio.com/users"];
+    Firebase *myRootRef = [[Firebase alloc] initWithUrl:firebaseURL_users];
     
     NSString *photo = @"defaulticon.png";
     if([_username.text  isEqual: @"Margaret"]) {

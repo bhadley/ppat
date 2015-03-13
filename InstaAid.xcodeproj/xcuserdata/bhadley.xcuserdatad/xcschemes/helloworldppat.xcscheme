@@ -91,7 +91,7 @@
    </AnalyzeAction>
    <ArchiveAction
       buildConfiguration = "Release"
-      customArchiveName = "InstaAidV1"
+      customArchiveName = "InstaAidV1.1"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>

@@ -20,4 +20,5 @@
 @property (nonatomic, strong) NSMutableArray *namesFB;
 @property (nonatomic, strong) NSMutableArray *roomsFB;
 @property (nonatomic, strong) NSMutableArray *picturesFB;
+
 @end

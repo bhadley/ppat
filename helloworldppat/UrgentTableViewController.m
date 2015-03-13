@@ -24,19 +24,50 @@
 @synthesize isUrgent = _isUrgent;
 @synthesize isProcessed = _isProcessed;
 
+int requestsNotProcessed = 0;
+NSMutableArray* isProcessedList;
+
+bool anyRequestsNotProcessed(){
+    return [isProcessedList containsObject:@"false"];
+}
+
+
+void systemAudioCallback()
+{
+    
+    if (anyRequestsNotProcessed() == true) {
+        NSLog(@"CONTINUING SOUND!");
+        AudioServicesAddSystemSoundCompletion(1027,
+                                              NULL,
+                                              NULL,
+                                              systemAudioCallback,
+                                              NULL);
+        AudioServicesPlaySystemSound(1027);
+
+        
+    }
+    
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+
     NSTimer* myTimer = [NSTimer scheduledTimerWithTimeInterval: 60 target: self
                                                       selector: @selector(callAfterTimeout:) userInfo: nil repeats: YES];
     
+    /*
+     NSTimer* requestsProcessedTimer = [NSTimer scheduledTimerWithTimeInterval: 10 target: self
+                                                      selector: @selector(callAfterTimeout2:) userInfo: nil repeats: YES];
+    */
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     NSLog(@"did load");
-    
+   
      //self.isUrgent = [[NSMutableArray alloc] init];
     
 
@@ -77,7 +108,7 @@
     self.isProcessed = [[NSMutableArray alloc] init];
     
     // Create a reference to a Firebase location
-    Firebase *userRef = [[Firebase alloc] initWithUrl:@"https://tbhdev.firebaseio.com/users"];
+    Firebase *userRef = [[Firebase alloc] initWithUrl:firebaseURL_users];
     [userRef observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
         for (FDataSnapshot* childSnap in snapshot.children) {
         [self.idsFB addObject:childSnap.name];
@@ -88,13 +119,14 @@
         
 
     }
+    
     }];
     
     
     
     
     // Create a reference to a Firebase location
-    Firebase *userRef1 = [[Firebase alloc] initWithUrl:@"https://tbhdev.firebaseio.com/processed"];
+    Firebase *userRef1 = [[Firebase alloc] initWithUrl:firebaseURL_processed];
     [userRef1 observeEventType:FEventTypeChildAdded withBlock:^(FDataSnapshot *snapshot) {
         NSLog(@"is processed!");
         NSLog(@"%@ -> %@", snapshot.name, snapshot.value);
@@ -109,11 +141,20 @@
             [self.isProcessed replaceObjectAtIndex:indexIntoArray withObject:@"true"];
             NSLog(@"%@",self.isProcessed);
             NSLog(@"isProcessed now true");
+            isProcessedList = self.isProcessed;
+            //requestsNotProcessed = requestsNotProcessed - 1;
+            if (anyRequestsNotProcessed() == false) {
+                AudioServicesDisposeSystemSoundID(1027);
+       
+                NSLog(@"ALL REQUESTS PROCESSED 1");
+            }
+            
         } else {
             NSLog(@"isProcessed not true right now");
         }
 
         [self.tableView reloadData];
+        
         
     }];
     
@@ -122,10 +163,10 @@
     
     
     // Create a reference to a Firebase location
-    Firebase *myRootRef = [[Firebase alloc] initWithUrl:@"https://tbhdev.firebaseio.com/requests"];
+    Firebase *myRootRef = [[Firebase alloc] initWithUrl:firebaseURL_requests];
     [myRootRef observeEventType:FEventTypeChildAdded withBlock:^(FDataSnapshot *snapshot) {
         
-        AudioServicesPlaySystemSound (1000);
+        
         NSLog(@"should be playing sound");
         
         //NSLog(@"%@ -> %@", snapshot.name, snapshot.value);
@@ -151,6 +192,11 @@
             [self.textRequests addObject:snapshot.value[@"text"]];
             [self.residentImages addObject:picture];
             [self.isProcessed addObject:@"false"];
+            requestsNotProcessed = requestsNotProcessed + 1;
+            isProcessedList = self.isProcessed;
+            NSLog(@"requestsNotProcessed:%d", requestsNotProcessed);
+            systemAudioCallback();
+        
        /* } else {
             NSInteger firstNo = [self.isUrgent indexOfObject:@"n"];
             if(NSNotFound == firstNo) {
@@ -193,10 +239,16 @@
                 [self.textRequests removeObjectAtIndex:i];
                 [self.residentImages removeObjectAtIndex:i];
                 [self.isProcessed removeObjectAtIndex:i];
-
+                requestsNotProcessed = requestsNotProcessed - 1;
+                isProcessedList = self.isProcessed;
             //}
         //}
         
+        if (anyRequestsNotProcessed() == false) {
+            AudioServicesDisposeSystemSoundID(1027);
+            NSLog(@"ALL REQUESTS PROCESSED 2");
+
+        }
         [self.tableView reloadData];
     }];
 
@@ -231,7 +283,7 @@
 
     static NSString *CellIdentifier;
   
-    NSLog(@"%ld",[indexPath row]);
+    //NSLog(@"%ld",[indexPath row]);
     
     if ([[self.isProcessed objectAtIndex: [indexPath row]]  isEqual: @"false"])  {
         CellIdentifier = @"textTableCell";
@@ -295,6 +347,7 @@
 
 -(void) callAfterTimeout:(NSTimer*) t
 {
+    
     NSLog(@"checking!");
     NSURL *scriptUrl = [NSURL URLWithString:@"http://www.google.com"];
     NSData *data = [NSData dataWithContentsOfURL:scriptUrl];
@@ -311,6 +364,7 @@
         [alert show];
     }
 }
+
 
 
 

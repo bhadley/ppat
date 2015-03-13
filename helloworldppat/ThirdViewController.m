@@ -31,16 +31,11 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    /*
-     Firebase *fb1 = [[Firebase alloc] initWithUrl:[NSString stringWithFormat:@"%@/%@", @"https://bostonhome.firebaseio.com/processed/", @"Margaret"]];
-    [fb1 removeValue];
-    NSLog(@"here");
-    Firebase *fb2 = [[Firebase alloc] initWithUrl:[NSString stringWithFormat:@"%@/%@", @"https://bostonhome.firebaseio.com/requests/", @"Margaret"]];
-    [fb2 removeValue];
-     */
+
     self.username = [[NSUserDefaults standardUserDefaults] stringForKey:@"Username"];
     
     NSLog(@"username: %@", self.username);
+    
     
 }
 
@@ -114,6 +109,16 @@
     NSURL *url = [NSURL URLWithString:@"facetime://ppat-teammargaret@mit.edu"];
     [[UIApplication sharedApplication] openURL:url];
     //[self requestForUserID:@"Margaret" withRequest:@"video"];
+    
+    NSDate *currentTime = [NSDate date];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"YYYY-MM-dd hh:mm:ss"];
+    NSString *resultString = [dateFormatter stringFromDate: currentTime];
+    Firebase *fbRequestLog = [[Firebase alloc] initWithUrl:firebaseURL_log];
+    NSDictionary *post2 = @{@"user":self.username,@"text": @"Video Chat Initiated",@"timestamp":resultString};
+    Firebase *postRef = [fbRequestLog childByAutoId];
+    [postRef setValue: post2];
+    
 }
 
 - (IBAction)sendNurse:(id)sender {
