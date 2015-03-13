@@ -11,4 +11,8 @@
 -(UIColor*)colorWithHexString:(NSString*)hex;
 -(void)requestForUserID:(NSString*)userID withRequest:(NSString*)request;
 -(void)cancelRequestForUserID:(NSString*)userID ;
+extern NSString *const firebaseURL_log;
+extern NSString *const firebaseURL_requests;
+extern NSString *const firebaseURL_users;
+extern NSString *const firebaseURL_processed;
 @end

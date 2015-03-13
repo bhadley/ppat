@@ -31,7 +31,7 @@
     NSLog(@"username: %@", self.username);
     
     // Create a reference to a Firebase location
-    Firebase *userRef = [[Firebase alloc] initWithUrl:@"https://bostonhome.firebaseio.com/processed"];
+    Firebase *userRef = [[Firebase alloc] initWithUrl:firebaseURL_processed];
     [userRef observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
         
         NSLog(@"%@ -> %@", snapshot.name, snapshot.value);
@@ -46,7 +46,7 @@
         
     }];
     
-    Firebase *userRefRequest = [[Firebase alloc] initWithUrl:@"https://bostonhome.firebaseio.com/requests"];
+    Firebase *userRefRequest = [[Firebase alloc] initWithUrl:firebaseURL_requests];
     [userRefRequest observeEventType:FEventTypeChildRemoved withBlock:^(FDataSnapshot *snapshot) {
         
         if ([snapshot.name  isEqual: self.username]){
@@ -64,13 +64,26 @@
     
 }
 
+//firebaseURL_requests
+
+//str = [str stringByAppendingString:@"world"]; //str is now "hello world"
 
 - (IBAction)cancelRequestCall:(id)sender{
-    Firebase *fb = [[Firebase alloc] initWithUrl:[NSString stringWithFormat:@"%@/%@", @"https://bostonhome.firebaseio.com/requests/", self.username]];
+    Firebase *fb = [[Firebase alloc] initWithUrl:[NSString stringWithFormat:@"%@/%@", firebaseURL_requests, self.username]];
+    NSLog(@"TRYING THIS OUT: %@", fb);
     [fb removeValue];
     
-    Firebase *fb2 = [[Firebase alloc] initWithUrl:[NSString stringWithFormat:@"%@/%@", @"https://bostonhome.firebaseio.com/processed/", self.username]];
+    Firebase *fb2 = [[Firebase alloc] initWithUrl:[NSString stringWithFormat:@"%@/%@", firebaseURL_processed, self.username]];
     [fb2 removeValue];
+    
+    NSDate *currentTime = [NSDate date];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"YYYY-MM-dd hh:mm:ss"];
+    NSString *resultString = [dateFormatter stringFromDate: currentTime];
+    Firebase *fbRequestLog = [[Firebase alloc] initWithUrl:firebaseURL_log];
+    NSDictionary *post2 = @{@"user":self.username,@"text": @"User cancelled request",@"timestamp":resultString};
+    Firebase *postRef = [fbRequestLog childByAutoId];
+    [postRef setValue: post2];
 }
 
 - (IBAction)logout:(id)sender {
