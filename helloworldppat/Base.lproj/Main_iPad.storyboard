@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="Rol-HJ-xCY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14B25" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="Rol-HJ-xCY">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
     <scenes>
         <!--Third View Controller-->
@@ -19,7 +19,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JI0-3o-vT9">
                                 <rect key="frame" x="44" y="424" width="300" height="300"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" image="video.png" backgroundImage="EF244A79-1AA2-4C23-BFB2-5C0F66773522">
+                                <state key="normal" image="video.png" backgroundImage="CB2252D3-AD58-4BE1-A10B-B5A403CC8D43">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -170,9 +170,9 @@
         <!--Urgent Table View Controller-->
         <scene sceneID="gKh-dA-mrX">
             <objects>
-                <tableViewController storyboardIdentifier="NurseView" id="UZc-qw-3lZ" customClass="UrgentTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="NurseView" automaticallyAdjustsScrollViewInsets="NO" id="UZc-qw-3lZ" customClass="UrgentTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="122" sectionHeaderHeight="22" sectionFooterHeight="22" id="tA5-RR-PvM">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="704"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -228,6 +228,18 @@
                                                 <action selector="requestProcessed:" destination="QJo-CL-Ptm" eventType="touchUpInside" id="pFj-wm-b3f"/>
                                             </connections>
                                         </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Room #:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Fh-nv-ebm">
+                                            <rect key="frame" x="457" y="27" width="66" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="room" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lm5-xq-47K">
+                                            <rect key="frame" x="545" y="27" width="246" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <color key="backgroundColor" red="0.84078045280612246" green="0.0094994152366869762" blue="0.018623322835509517" alpha="0.57000000000000006" colorSpace="calibratedRGB"/>
                                 </tableViewCellContentView>
@@ -236,6 +248,7 @@
                                     <outlet property="nameLabel" destination="iPb-Uw-OF6" id="RRC-TA-S7l"/>
                                     <outlet property="processRequest" destination="Ood-Oo-qRO" id="VDd-Wn-HOD"/>
                                     <outlet property="residentImage" destination="RHp-oK-Mco" id="RXn-re-a5z"/>
+                                    <outlet property="roomLabel" destination="lm5-xq-47K" id="0UV-Lh-K4N"/>
                                     <outlet property="textLabel" destination="Ueh-lW-6Dw" id="114-xs-w0A"/>
                                 </connections>
                             </tableViewCell>
@@ -285,6 +298,18 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Room #:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CMY-Cp-uqI">
+                                            <rect key="frame" x="458" y="27" width="66" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="room" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DNa-Bw-2Gb">
+                                            <rect key="frame" x="545" y="27" width="241" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <color key="backgroundColor" red="0.21956887473867012" green="0.77076690051020402" blue="0.15871776034546023" alpha="0.75" colorSpace="calibratedRGB"/>
                                 </tableViewCellContentView>
@@ -292,6 +317,7 @@
                                     <outlet property="cancelRequest" destination="t1c-JM-nuu" id="3Ya-vN-2GP"/>
                                     <outlet property="nameLabel" destination="34p-Jr-155" id="qFN-9b-wfB"/>
                                     <outlet property="residentImage" destination="DcO-MA-JgT" id="KEV-f8-Ck9"/>
+                                    <outlet property="roomLabel" destination="DNa-Bw-2Gb" id="Hmx-dd-Sni"/>
                                     <outlet property="textLabel" destination="y0J-Ba-m4x" id="EuQ-iA-wVu"/>
                                 </connections>
                             </tableViewCell>
@@ -301,12 +327,18 @@
                             <outlet property="delegate" destination="UZc-qw-3lZ" id="dHF-oy-azY"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="024-d8-DV9"/>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" id="024-d8-DV9">
+                        <nil key="title"/>
+                    </navigationItem>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="re4-pb-4gF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <screenEdgePanGestureRecognizer minimumNumberOfTouches="1" id="HpT-sJ-QRM">
+                    <rectEdge key="edges" right="YES"/>
+                </screenEdgePanGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1905" y="-286"/>
+            <point key="canvasLocation" x="1618" y="654"/>
         </scene>
         <!--Send Text View Controller-->
         <scene sceneID="UDi-Ho-9Y0">
@@ -352,6 +384,66 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y6N-q9-tT6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3107" y="-317"/>
+        </scene>
+        <!--Nurse Settings View Controller-->
+        <scene sceneID="o27-cN-uue">
+            <objects>
+                <viewController storyboardIdentifier="NurseViewSettings" id="NEQ-oO-k0x" customClass="NurseSettingsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7i1-Qg-H3X"/>
+                        <viewControllerLayoutGuide type="bottom" id="f9V-9J-iwd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9MG-pY-MQU">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R7b-xY-RgX">
+                                <rect key="frame" x="26" y="677" width="231" height="63"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="&lt;&lt; Back To Nurse View">
+                                    <color key="titleColor" red="0.01958907709" green="0.065489477039999994" blue="0.056118637499999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="backToNurseView:" destination="NEQ-oO-k0x" eventType="touchUpInside" id="26g-x4-KTF"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="InstaAid Settings" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k5Z-Xw-GgO">
+                                <rect key="frame" x="79" y="51" width="213" height="37"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Requests from residents living on which floors should be displayed?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="50t-fK-2ip">
+                                <rect key="frame" x="79" y="127" width="521" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="f7l-fj-dEk">
+                                <rect key="frame" x="638" y="124" width="179" height="29"/>
+                                <segments>
+                                    <segment title="1st"/>
+                                    <segment title="2nd"/>
+                                    <segment title="Both"/>
+                                </segments>
+                                <connections>
+                                    <action selector="toggleAction:" destination="NEQ-oO-k0x" eventType="valueChanged" id="Ybb-xo-Mul"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <connections>
+                        <outlet property="BackToNurseView" destination="R7b-xY-RgX" id="U3Z-U4-gkM"/>
+                        <outlet property="floorToggle" destination="f7l-fj-dEk" id="KLJ-Rj-AMz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uTQ-gj-EoZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="515" y="752"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="HQ5-WV-4cy">
@@ -457,7 +549,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="EF244A79-1AA2-4C23-BFB2-5C0F66773522" width="212" height="212">
+        <image name="CB2252D3-AD58-4BE1-A10B-B5A403CC8D43" width="212" height="212">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPj9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQsLzI4O1UkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw

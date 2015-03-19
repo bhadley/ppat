@@ -41,6 +41,7 @@
 		DE5AC3B01A051D660053B7DD /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE5AC3AF1A051D660053B7DD /* Security.framework */; };
 		DE5AC3B21A051D6E0053B7DD /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE5AC3B11A051D6E0053B7DD /* SystemConfiguration.framework */; };
 		DE5AC3BF1A052BF00053B7DD /* utils.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5AC3BE1A052BF00053B7DD /* utils.m */; };
+		DE5E94D81AB8D4C00058790F /* NurseSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5E94D71AB8D4C00058790F /* NurseSettingsViewController.m */; };
 		DE7E567F19E3235800C4EF2D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE7E567E19E3235800C4EF2D /* Foundation.framework */; };
 		DE7E568119E3235800C4EF2D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE7E568019E3235800C4EF2D /* CoreGraphics.framework */; };
 		DE7E568319E3235800C4EF2D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE7E568219E3235800C4EF2D /* UIKit.framework */; };
@@ -112,6 +113,8 @@
 		DE5AC3B11A051D6E0053B7DD /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		DE5AC3BD1A052BF00053B7DD /* utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utils.h; sourceTree = "<group>"; };
 		DE5AC3BE1A052BF00053B7DD /* utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = utils.m; sourceTree = "<group>"; };
+		DE5E94D61AB8D4C00058790F /* NurseSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NurseSettingsViewController.h; sourceTree = "<group>"; };
+		DE5E94D71AB8D4C00058790F /* NurseSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NurseSettingsViewController.m; sourceTree = "<group>"; };
 		DE7E567B19E3235800C4EF2D /* InstaAid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaAid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE7E567E19E3235800C4EF2D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DE7E568019E3235800C4EF2D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -220,6 +223,8 @@
 				DE5AC3BD1A052BF00053B7DD /* utils.h */,
 				DE5AC3BE1A052BF00053B7DD /* utils.m */,
 				DEDBA9211A1D6FE7002C27F8 /* CreateAccountViewController.h */,
+				DE5E94D61AB8D4C00058790F /* NurseSettingsViewController.h */,
+				DE5E94D71AB8D4C00058790F /* NurseSettingsViewController.m */,
 				DEDBA9221A1D6FE7002C27F8 /* CreateAccountViewController.m */,
 				DE7E568D19E3235800C4EF2D /* AppDelegate.h */,
 				DE7E568E19E3235800C4EF2D /* AppDelegate.m */,
@@ -436,6 +441,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE7E56B819E32E6200C4EF2D /* SecondViewController.m in Sources */,
+				DE5E94D81AB8D4C00058790F /* NurseSettingsViewController.m in Sources */,
 				DE3973841A16F85F005105B8 /* SendTextViewController.m in Sources */,
 				DE7E56BB19E3311400C4EF2D /* ThirdViewController.m in Sources */,
 				DE7E568F19E3235800C4EF2D /* AppDelegate.m in Sources */,
@@ -587,7 +593,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "helloworldppat/InstaAid-Prefix.pch";
 				INFOPLIST_FILE = "helloworldppat/InstaAid-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
 				PRODUCT_NAME = InstaAid;
 				PROVISIONING_PROFILE = "";
@@ -610,7 +616,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "helloworldppat/InstaAid-Prefix.pch";
 				INFOPLIST_FILE = "helloworldppat/InstaAid-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
 				PRODUCT_NAME = InstaAid;
 				PROVISIONING_PROFILE = "";

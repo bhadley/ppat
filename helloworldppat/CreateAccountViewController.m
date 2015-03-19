@@ -59,6 +59,7 @@
     NSDictionary *post1 = @{
                             @"name":_username.text,
                             @"pic":photo,
+                            @"room":@"x-xxx"
                             };
     Firebase *post1Ref = [myRootRef childByAppendingPath: _username.text];
     [post1Ref setValue: post1];

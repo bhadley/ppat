@@ -12,6 +12,7 @@
 @property (nonatomic, strong) IBOutlet UIImageView *residentImage;
 @property (nonatomic, strong) IBOutlet UILabel *nameLabel;
 @property (nonatomic, strong) IBOutlet UILabel *textLabel;
+@property (nonatomic, strong) IBOutlet UILabel *roomLabel;
 @property (nonatomic, strong) IBOutlet UILabel *userIDHiddenLabel;
 @property (nonatomic, strong) IBOutlet UIButton *processRequest;
 @property (nonatomic, strong) IBOutlet UIButton *cancelRequest;

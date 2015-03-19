@@ -12,6 +12,7 @@
 
 @property (nonatomic, strong) NSMutableArray *residentImages;
 @property (nonatomic, strong) NSMutableArray *names;
+@property (nonatomic, strong) NSMutableArray *rooms;
 @property (nonatomic, strong) NSMutableArray *textRequests;
 @property (nonatomic, strong) NSMutableArray *isUrgent;
 @property (nonatomic, strong) NSMutableArray *isProcessed;

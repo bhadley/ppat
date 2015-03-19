@@ -14,12 +14,18 @@
 
 @interface UrgentTableViewController ()
 
+@property (nonatomic, strong) IBOutlet UITapGestureRecognizer *tapRecognizer;
+
 @end
 
 @implementation UrgentTableViewController
 
+
+
+
 @synthesize residentImages = _residentImages;
 @synthesize names = _names;
+@synthesize rooms = _rooms;
 @synthesize textRequests = _textRequests;
 @synthesize isUrgent = _isUrgent;
 @synthesize isProcessed = _isProcessed;
@@ -31,8 +37,14 @@ NSMutableArray* textRequests;
 int emergencySoundID = 1030; //sherwood forest
 int normalSoundID = 1027; //minuet
 int soundID = 0;
+
 bool anyRequestsNotProcessed(){
     return [isProcessedList containsObject:@"false"];
+}
+
+
+- (bool) processThisUserRequest:(NSString *) floorAsString {
+    return ( (floorToggleMaster == 0 && [floorAsString  isEqual: @"1"]) ||      (floorToggleMaster == 1 && [floorAsString  isEqual: @"2"]) || (floorToggleMaster == 2) );
 }
 
 
@@ -58,17 +70,49 @@ void systemAudioCallback()
                                               systemAudioCallback,
                                               NULL);
         AudioServicesPlaySystemSound(soundID);
-
         
     }
     
 }
 
 
+- (IBAction)respondToTapGesture:(UITapGestureRecognizer *)recognizer {
+    UIViewController *vc;
+    vc = [self.storyboard instantiateViewControllerWithIdentifier:@"NurseViewSettings"];
+    [self presentViewController:vc animated:NO completion:nil];
+}
+
+/*
+- (IBAction)swipeAction:(UISwipeGestureRecognizer *)recognizer {
+    UIViewController *vc;
+    vc = [self.storyboard instantiateViewControllerWithIdentifier:@"NurseViewSettings"];
+    [self presentViewController:vc animated:NO completion:nil];
+}
+*/
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
 
+
+    /*
+    UISwipeGestureRecognizer *leftSwipe = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(swipeAction:)];
+    leftSwipe.direction = UISwipeGestureRecognizerDirectionLeft;
+
+    [self.view addGestureRecognizer:leftSwipe];
+    */
+    
+    UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc]
+                                             initWithTarget:self action:@selector(respondToTapGesture:)];
+    
+    // Specify that the gesture must be a single tap
+    tapRecognizer.numberOfTapsRequired = 3;
+    
+    // Add the tap gesture recognizer to the view
+    [self.view addGestureRecognizer:tapRecognizer];
+    
+    
     NSTimer* myTimer = [NSTimer scheduledTimerWithTimeInterval: 60 target: self
                                                       selector: @selector(callAfterTimeout:) userInfo: nil repeats: YES];
     
@@ -114,35 +158,52 @@ void systemAudioCallback()
     self.names = [[NSMutableArray alloc] init];
     
     self.textRequests = [[NSMutableArray alloc] init];
+    self.rooms = [[NSMutableArray alloc] init];
+
     self.residentImages = [[NSMutableArray alloc] init];
     
     self.idsFB = [[NSMutableArray alloc] init];
     self.namesFB = [[NSMutableArray alloc] init];
-    //self.roomsFB = [[NSMutableArray alloc] init];
+    self.roomsFB = [[NSMutableArray alloc] init];
     self.picturesFB = [[NSMutableArray alloc] init];
     self.isProcessed = [[NSMutableArray alloc] init];
+    
     
     // Create a reference to a Firebase location
     Firebase *userRef = [[Firebase alloc] initWithUrl:firebaseURL_users];
     [userRef observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
         for (FDataSnapshot* childSnap in snapshot.children) {
-        [self.idsFB addObject:childSnap.name];
-        [self.namesFB addObject:childSnap.value[@"name"]];
-        //[self.roomsFB addObject:childSnap.value[@"room"]];
-        [self.picturesFB addObject:childSnap.value[@"pic"]];
-        
-        
+            NSString *floorNumber = [childSnap.value[@"room"] substringToIndex:1 ];
 
-    }
+                [self.idsFB addObject:childSnap.name];
+                [self.namesFB addObject:childSnap.value[@"name"]];
+                //[self.roomsFB addObject:childSnap.value[@"room"]];
+                [self.picturesFB addObject:childSnap.value[@"pic"]];
+                [self.roomsFB addObject:childSnap.value[@"room"]];
+            
+            
+        }
     
     }];
     
+    
+    Firebase *userRefUsers = [[Firebase alloc] initWithUrl:firebaseURL_users];
+    [userRefUsers observeEventType:FEventTypeChildChanged withBlock:^(FDataSnapshot *snapshot) {
+        
+        NSString *userID = snapshot.value[@"name"];
+        NSInteger indexIntoArray = [self.namesFB indexOfObject:userID];
+        
+        [self.roomsFB replaceObjectAtIndex:indexIntoArray withObject:snapshot.value[@"room"] ];
+
+    }];
     
     
     
     // Create a reference to a Firebase location
     Firebase *userRef1 = [[Firebase alloc] initWithUrl:firebaseURL_processed];
     [userRef1 observeEventType:FEventTypeChildAdded withBlock:^(FDataSnapshot *snapshot) {
+
+        
         NSLog(@"is processed!");
         NSLog(@"%@ -> %@", snapshot.name, snapshot.value);
         
@@ -188,12 +249,20 @@ void systemAudioCallback()
         
         NSString *userID = snapshot.name; // snapshot.value[@"userID"];
         NSInteger indexIntoArray = [self.namesFB indexOfObject:userID];
+        
+        
+        NSString *floorNumber = [self.roomsFB[indexIntoArray] substringToIndex:1 ];
+        
+        if ([self processThisUserRequest: floorNumber] == true ) {
+        
+        
         //NSLog(@"%ld", (long)indexIntoArray);
         NSString *picture;
         if(indexIntoArray < [self.picturesFB count] && indexIntoArray >= 0) {
             
             //NSString *room = self.roomsFB[indexIntoArray];
             picture = self.picturesFB[indexIntoArray];
+            
         } else {
             picture = @"defaulticon.png";
             
@@ -207,6 +276,8 @@ void systemAudioCallback()
             [self.textRequests addObject:snapshot.value[@"text"]];
             [self.residentImages addObject:picture];
             [self.isProcessed addObject:@"false"];
+            [self.rooms addObject:self.roomsFB[indexIntoArray]];
+        
             requestsNotProcessed = requestsNotProcessed + 1;
             isProcessedList = self.isProcessed;
             textRequests = self.textRequests;
@@ -229,6 +300,7 @@ void systemAudioCallback()
             }
         }
         */
+        }
         [self.tableView reloadData];
     }];
     
@@ -246,6 +318,12 @@ void systemAudioCallback()
         //NSString *name = self.names[userID-1];
        // NSLog(@"%@",name);
         NSInteger i = [self.names indexOfObject:snapshot.name];
+        NSLog(@"%d",i);
+        
+        
+        if (i != NSNotFound) {
+        
+        
         //for (int i=0; i<[self.names count]; i=i+1) {
             
             //if ([self.names[i] isEqual: name]) {
@@ -255,12 +333,13 @@ void systemAudioCallback()
                 [self.textRequests removeObjectAtIndex:i];
                 [self.residentImages removeObjectAtIndex:i];
                 [self.isProcessed removeObjectAtIndex:i];
+                [self.rooms removeObjectAtIndex:i];
                 requestsNotProcessed = requestsNotProcessed - 1;
                 isProcessedList = self.isProcessed;
                 textRequests = self.textRequests;
             //}
         //}
-        
+       }
         if (anyRequestsNotProcessed() == false) {
             AudioServicesDisposeSystemSoundID(emergencySoundID);
             AudioServicesDisposeSystemSoundID(normalSoundID);
@@ -295,9 +374,9 @@ void systemAudioCallback()
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     
-    
     NSString *textString = [self.textRequests
                             objectAtIndex:[indexPath row]];
+    
 
     static NSString *CellIdentifier;
   
@@ -354,6 +433,11 @@ void systemAudioCallback()
     //cell.userIDHiddenLabel.text = indexPath - 1]; //[self.idsFB objectAtIndex: [indexPath row]];
     cell.textLabel.text = [self.textRequests
                             objectAtIndex:[indexPath row]];
+    NSLog(@"ROOM LABEL");
+    cell.roomLabel.text = [self.rooms
+                           objectAtIndex:[indexPath row]];
+    
+    NSLog(cell.roomLabel.text);
     
     UIImage *residentPhoto = [UIImage imageNamed:
                          [self.residentImages objectAtIndex: [indexPath row]]];

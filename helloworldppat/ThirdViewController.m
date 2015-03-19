@@ -105,7 +105,19 @@
 }
 
 - (IBAction)videoChat:(id)sender {
-    NSURL *url = [NSURL URLWithString:@"facetime://ppat-teammargaret@mit.edu"];
+    /*
+    NSString *facetimeString;;
+    if (floorToggleMaster == 0 ) {
+        facetimeString = @"facetime://tbh1@mit.edu";
+    }
+    else if (floorToggleMaster == 1) {
+        facetimeString = @"facetime://tbh2@mit.edu";
+    }
+    else {
+        facetimeString = @"facetime://thebostonhome@mit.edu";
+    }
+    */
+    NSURL *url = [NSURL URLWithString:@"facetime://thebostonhome@mit.edu"];
     [[UIApplication sharedApplication] openURL:url];
     //[self requestForUserID:@"Margaret" withRequest:@"video"];
     

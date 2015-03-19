@@ -13,6 +13,7 @@
 @implementation UrgentTableViewCell
 @synthesize nameLabel = _nameLabel;
 @synthesize textLabel = _textLabel;
+@synthesize roomLabel = _roomLabel;
 @synthesize residentImage = _residentImage;
 @synthesize userIDHiddenLabel = _userIDHiddenLabel;
 @synthesize processRequest = _processRequest;
