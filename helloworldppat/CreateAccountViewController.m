@@ -1,69 +1,52 @@
 //
-//  ThirdViewController.m
+//  CreateAccountViewController.m
 //  helloworldppat
 //
-//  Created by amadeus on 10/6/14.
-//  Copyright (c) 2014 amadeus. All rights reserved.
+//  Created by ldaquila on 10/6/14.
+//  Copyright (c) 2015. All rights reserved.
 //
+//  ------------------------------------------------------------------------
+//  Allow users to create an account by entering their name/room number. Nurses
+//  should just enter "Nurse" to be taken directly to the Nurse view. Account set-up
+//  only occurs after installation.
+//  ------------------------------------------------------------------------
 
 #import "CreateAccountViewController.h"
 #import <Firebase/Firebase.h>
-#import "utils.h"
-@interface CreateAccountViewController ()
 
+@interface CreateAccountViewController ()
 @end
 
 @implementation CreateAccountViewController
 
-
-
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
-   [self.username becomeFirstResponder];
-    
+    // set initial cursor focus to text box
+    [self.username becomeFirstResponder];
 }
 
-- (void)didReceiveMemoryWarning
-{
+
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 
 - (IBAction)createAccount:(id)sender {
-    NSLog(@"creating account");
-
+    
     [[NSUserDefaults standardUserDefaults] setValue:_username.text forKey:@"Username"];
-     [[NSUserDefaults standardUserDefaults] synchronize];
+    [[NSUserDefaults standardUserDefaults] synchronize];
     
-    Firebase *myRootRef = [[Firebase alloc] initWithUrl:firebaseURL_users];
+    Firebase *myRootRef = [[Firebase alloc] initWithUrl:FB_USERS];
     
-    NSString *photo = @"defaulticon.png";
-    if([_username.text  isEqual: @"Margaret"]) {
-        photo = @"margaret.png";
-    }
-    
-    
+    // Create a new user in firebase, instantiate with default room number xxx-x
     NSDictionary *post1 = @{
                             @"name":_username.text,
-                            @"pic":photo,
-                            @"room":@"x-xxx"
+                            @"room":_roomNumber.text
                             };
     Firebase *post1Ref = [myRootRef childByAppendingPath: _username.text];
     [post1Ref setValue: post1];
     
+    // if username is "Nurse" then go to nurse view, otherwise, go to resident view
     UIViewController *vc;
     if ([_username.text  isEqual: @"Nurse"]) {
         vc = [self.storyboard instantiateViewControllerWithIdentifier:@"NurseView"];
@@ -71,7 +54,7 @@
         vc = [self.storyboard instantiateViewControllerWithIdentifier:@"ResidentView"];
     }
     
-    [self presentViewController:vc animated:YES completion:nil];
+    [self presentViewController:vc animated:NO completion:nil];
 }
  
 

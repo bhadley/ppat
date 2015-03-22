@@ -1,9 +1,8 @@
 //
 //  AppDelegate.m
-//  helloworldppat
 //
-//  Created by amadeus on 10/6/14.
-//  Copyright (c) 2014 ___FULLUSERNAME___. All rights reserved.
+//  Created by ldaquila on 10/6/14.
+//  Copyright (c) 2015. All rights reserved.
 //
 
 #import "AppDelegate.h"
@@ -14,8 +13,6 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {    
     NSString *username = [[NSUserDefaults standardUserDefaults] stringForKey:@"Username"];
-    
-    NSLog(@"username: %@", username);
     
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main_iPad" bundle:nil];
     UIViewController *vc;
@@ -28,7 +25,6 @@
         vc = [sb instantiateViewControllerWithIdentifier:@"ResidentView"];
     }
     
-    //vc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.rootViewController = vc;
     [self.window makeKeyAndVisible];

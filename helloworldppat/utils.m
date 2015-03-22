@@ -1,98 +1,85 @@
 //
 //  UITableView+utils.m
-//  helloworldppat
 //
-//  Created by amadeus on 11/1/14.
-//  Copyright (c) 2014 amadeus. All rights reserved.
+//  Created by bhadley on 11/1/14.
+//  Copyright (c) 2015. All rights reserved.
 //
+//  ------------------------------------------------------------------------
+//  Methods and variables referenced throughout app are stored in utils
+//  and can be referenced by importing utils.h
+//  ------------------------------------------------------------------------
+
 #import <Firebase/Firebase.h>
 
-@implementation UIViewController(utils)
+#import "utils.h"
+@interface utils()
+@end
+//@implementation UIViewController(utils)
+@implementation utils
 
-NSString *const firebaseURL_log = @"https://tbhdev.firebaseio.com/log";
-NSString *const firebaseURL_requests = @"https://tbhdev.firebaseio.com/requests";
-NSString *const firebaseURL_users = @"https://tbhdev.firebaseio.com/users";
-NSString *const firebaseURL_processed = @"https://tbhdev.firebaseio.com/processed";
+/*
+The application stores information in firebase, for communication between
+ resident side and nurse side. For developmental purposes, use "tbhdev". For deployment, use "thebostonhome".
+*/
 
-NSInteger floorToggleMaster = 0;
+NSString * const FB_LOG = @"https://tbhdev.firebaseio.com/log";
+NSString * const FB_REQUESTS = @"https://tbhdev.firebaseio.com/requests";
+NSString * const FB_USERS = @"https://tbhdev.firebaseio.com/users";
+NSString * const FB_PROCESSED = @"https://tbhdev.firebaseio.com/processed";
 
--(void)requestForUserID:(NSString*)userID withRequest:(NSString*)request
-//-(void)sendrequest:(BOOL)urgency forUser:(NSString*)userID
-{
 
-    // Create a reference to a Firebase location
-    Firebase *myRootRef = [[Firebase alloc] initWithUrl:firebaseURL_requests];
-    // Write data to Firebase
-   // NSArray *persons = [NSArray arrayWithObjects:@"1","video","timestamp"];
-    NSLog(@"requestForUserIDhere");
-    
-    //NSTimeInterval timeInMiliseconds = [[NSDate date] timeIntervalSince1970];
- 
+/* the floor toggle variable specifies which requests should be received based
+    on the resident's floor.
+        0: 1st floor residents only 
+        1: 2nd floor residents only
+        2: all residents
+    this variable may be set by the nurse's app by triple tapping on the home screen
+ */
+NSInteger nurseFloorToggle = 0;
+
+/*
+ Return the current time in a nicely formatted string YYYY-MM-DD HH:MM:SS
+ */
++(NSString*)getTimeStamp {
     NSDate *currentTime = [NSDate date];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"YYYY-MM-dd hh:mm:ss"];
     NSString *resultString = [dateFormatter stringFromDate: currentTime];
-   
-    
-    NSDictionary *post1 = @{
-                            //@"userID":userID,
-                            @"text": request,
-                            @"timestamp":resultString
-                            };
-    Firebase *post1Ref = [myRootRef childByAppendingPath: userID];
-    [post1Ref setValue: post1 /*withCompletionBlock:^(NSError *error, Firebase *ref) {
-        if (error) {
-            NSLog(@"error connecting to firebase!");
-            NSLog(@"%@", error);
-        } else {
-            NSLog(@"success connecting to firebase!");
-        }
-    }*/];
-    
-   // NSString *postId = post1Ref.name;
-    
-    //[myRootRef childByAutoId:@"Do you have noms? You'll love Firebase."];
-    
-    Firebase *fbRequestLog = [[Firebase alloc] initWithUrl:firebaseURL_log];
-    NSDictionary *post2 = @{
-                            @"user": userID,
-                            @"text": request,
-                            @"timestamp":resultString
-                            };
-
-    
-    Firebase *postRef = [fbRequestLog childByAutoId];
-    [postRef setValue: post2];
-
+    return resultString;
 }
 
 /*
-- (void)cancelRequestForUser:(NSString*)userID {
-    NSLog(@"user cancelled request");
-    Firebase *fb = [[Firebase alloc] initWithUrl:[NSString stringWithFormat:@"%@/%@", @"https://bostonhome.firebaseio.com/requests/", userID]];
-    [fb removeValue];
-    
-    NSDate *currentTime = [NSDate date];
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"YYYY-MM-dd hh:mm"];
-    NSString *resultString = [dateFormatter stringFromDate: currentTime];
-    Firebase *fbRequestLog = [[Firebase alloc] initWithUrl:@"https://bostonhome.firebaseio.com/log"];
-    NSDictionary *post2 = @{@"user":userID,@"text": @"User cancelled request",@"timestamp":resultString};
-    Firebase *postRef = [fbRequestLog childByAutoId];
-    [postRef setValue: post2];
-    
-}
+ Send resident's request to firebase, and create an entry in the firebase
+ log to record this event
+ @param userName resident's name
+ @param request string request (as string) to be sent
  */
-
-/*
--(void)processUserRequest:(NSString*)userID
-//-(void)sendrequest:(BOOL)urgency forUser:(NSString*)userID
++(void)sendRequestForUser:(NSString*)userName withRequest:(NSString*)request
 {
-    // Create a reference to a Firebase location
-    Firebase *myRootRef = [[Firebase alloc] initWithUrl:@"https://bostonhome.firebaseio.com/processed"];
-    // Write data to Firebase
-    [myRootRef childByAppendingPath: userID];
+
+    Firebase *myRootRef = [[Firebase alloc] initWithUrl:FB_REQUESTS];
+    
+    // Prepare timestamp
+    NSString *timeStamp = [self getTimeStamp];
+   
+    // Log request in firebase
+    NSDictionary *post1 = @{
+                            @"text": request,
+                            @"timestamp":timeStamp
+                            };
+    Firebase *post1Ref = [myRootRef childByAppendingPath: userName];
+    [post1Ref setValue: post1 ];
+    
+    // Send request to firebase
+    Firebase *fbRequestLog = [[Firebase alloc] initWithUrl:FB_LOG];
+    NSDictionary *post2 = @{
+                            @"user": userName,
+                            @"text": request,
+                            @"timestamp":timeStamp
+                            };
+    
+    Firebase *postRef = [fbRequestLog childByAutoId];
+    [postRef setValue: post2];
 }
-*/
 
 @end

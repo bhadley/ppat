@@ -1,20 +1,20 @@
 //
 //  UITableView+utils.h
-//  helloworldppat
 //
-//  Created by amadeus on 11/1/14.
-//  Copyright (c) 2014 amadeus. All rights reserved.
+//  Created by bhadley on 11/1/14.
+//  Copyright (c) 2015. All rights reserved.
 //
 
-@interface UIViewController(utils)
+//@interface UIViewController(utils)
+@interface utils : UIViewController
 
--(UIColor*)colorWithHexString:(NSString*)hex;
--(void)requestForUserID:(NSString*)userID withRequest:(NSString*)request;
--(void)cancelRequestForUserID:(NSString*)userID ;
-extern NSString *const firebaseURL_log;
-extern NSString *const firebaseURL_requests;
-extern NSString *const firebaseURL_users;
-extern NSString *const firebaseURL_processed;
++(void)sendRequestForUser:(NSString*)userID withRequest:(NSString*)request;
++(NSString*)getTimeStamp;
 
-extern NSInteger floorToggleMaster;
+extern NSString * const FB_LOG;
+extern NSString * const FB_REQUESTS;
+extern NSString * const FB_USERS;
+extern NSString * const FB_PROCESSED;
+
+extern NSInteger nurseFloorToggle;
 @end

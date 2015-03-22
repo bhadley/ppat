@@ -1,66 +1,42 @@
 //
-//  ThirdViewController.m
-//  helloworldppat
+//  SendTextViewController.m
 //
-//  Created by amadeus on 10/6/14.
-//  Copyright (c) 2014 amadeus. All rights reserved.
+//  Created by bhadley on 10/6/14.
+//  Copyright (c) 2015. All rights reserved.
 //
+//  ------------------------------------------------------------------------
+//  Handles the send text message view controller, which allows residents
+//  to enter a custom text message to send as a request
+//  ------------------------------------------------------------------------
 
 #import "SendTextViewController.h"
 
-#import "utils.h"
-@interface SendTextViewController ()
 
+@interface SendTextViewController()
 @end
 
 @implementation SendTextViewController
 
-
-
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
-   [self.requestTxtMsg becomeFirstResponder];
+    // set cursor to text box automatically
+    [self.requestTxtMsg becomeFirstResponder];
     
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
-
+ When the send text message button is pressed, the text the user entered
+ in the text box will be sent to firebase
+ */
 - (IBAction)sendTextMsgRequest:(id)sender {
-    NSString *
-    username = [[NSUserDefaults standardUserDefaults] stringForKey:@"Username"];
+    NSString *username = [[NSUserDefaults standardUserDefaults] stringForKey:@"Username"];
   
-    [self requestForUserID:username withRequest:  _requestTxtMsg.text];
+    [utils sendRequestForUser:username withRequest:  _requestTxtMsg.text];
 
 }
-
-/*
-- (IBAction)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
-    
-    if([text isEqualToString:@"\n"]) {
-        [self.requestTxtMsg resignFirstResponder];
-        //return NO;
-    }
-    
-    //return YES;
-}
-*/
-
 
 @end

@@ -1,5 +1,5 @@
 //
-//  SecondViewController.h
+//  RequestViewController.h
 //  helloworldppat
 //
 //  Created by amadeus on 10/6/14.
@@ -8,9 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SecondViewController : UIViewController
+@interface RequestViewController : UIViewController
 
-//- (IBAction)cancelRequestCall:(id)sender;
 @property (nonatomic, strong) IBOutlet UILabel *requestStatus;
 @property (weak, nonatomic) IBOutlet UIImageView *requestStatusIcon;
 
