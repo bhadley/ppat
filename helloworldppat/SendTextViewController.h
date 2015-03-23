@@ -7,9 +7,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SendTextViewController : UIViewController
+@interface SendTextViewController : UIViewController  <UITextViewDelegate>
 
--(IBAction)sendTextMsgRequest:(id)sender;
 @property (weak, nonatomic) IBOutlet UITextView *requestTxtMsg;
+- (IBAction)sendRequest:(id)sender;
 
 @end

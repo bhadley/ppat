@@ -13,16 +13,17 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {    
     NSString *username = [[NSUserDefaults standardUserDefaults] stringForKey:@"Username"];
+    NSString *loginCode = [[NSUserDefaults standardUserDefaults] stringForKey:@"loginCode"];
     
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main_iPad" bundle:nil];
     UIViewController *vc;
     
-    if([username  isEqual: @"Nurse"]) {
+    if([username  isEqual: @"Nurse"] && [loginCode  isEqual: @"tbh"]) {
         vc = [sb instantiateViewControllerWithIdentifier:@"NurseView"];
-    } else if(username == nil) {
-        vc = [sb instantiateViewControllerWithIdentifier:@"CreateAccountView"];
-    } else {
+    } else if ( (username != nil) && [loginCode  isEqual: @"tbh"] ) {
         vc = [sb instantiateViewControllerWithIdentifier:@"ResidentView"];
+    } else {
+        vc = [sb instantiateViewControllerWithIdentifier:@"CreateAccountView"];
     }
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];

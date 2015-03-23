@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DE0457591A35733E00D83525 /* aid.png in Resources */ = {isa = PBXBuildFile; fileRef = DE04574F1A35733D00D83525 /* aid.png */; };
 		DE0457641A3574C300D83525 /* Icon-76.png in Resources */ = {isa = PBXBuildFile; fileRef = DE0457631A3574C300D83525 /* Icon-76.png */; };
 		DE0457681A35777700D83525 /* Icon-76@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DE0457671A35777700D83525 /* Icon-76@2x.png */; };
 		DE25BA671A12ADED0028194E /* bringWater.png in Resources */ = {isa = PBXBuildFile; fileRef = DE25BA661A12ADED0028194E /* bringWater.png */; };
@@ -18,7 +17,6 @@
 		DE39035E1A1F0B3B0011D891 /* emergency.png in Resources */ = {isa = PBXBuildFile; fileRef = DE39035D1A1F0B3B0011D891 /* emergency.png */; };
 		DE3973721A164233005105B8 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE3973701A164233005105B8 /* Main_iPad.storyboard */; };
 		DE3973741A16D90E005105B8 /* redx.png in Resources */ = {isa = PBXBuildFile; fileRef = DE3973731A16D90E005105B8 /* redx.png */; };
-		DE3973761A16DF84005105B8 /* videochat.png in Resources */ = {isa = PBXBuildFile; fileRef = DE3973751A16DF84005105B8 /* videochat.png */; };
 		DE3973781A16E4F5005105B8 /* hourglass.png in Resources */ = {isa = PBXBuildFile; fileRef = DE3973771A16E4F5005105B8 /* hourglass.png */; };
 		DE3973841A16F85F005105B8 /* SendTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3973831A16F85F005105B8 /* SendTextViewController.m */; };
 		DE5AC3AA1A051D470053B7DD /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DE5AC3A91A051D470053B7DD /* libicucore.dylib */; };
@@ -32,6 +30,7 @@
 		DE5E94DE1ABBA23A0058790F /* NurseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5E94DD1ABBA23A0058790F /* NurseTableViewCell.m */; };
 		DE5E94E11ABBA30C0058790F /* ResidentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5E94E01ABBA30C0058790F /* ResidentViewController.m */; };
 		DE5E94E41ABBA38B0058790F /* RequestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE5E94E31ABBA38B0058790F /* RequestViewController.m */; };
+		DE5E95081ABE72610058790F /* checkboxbw.png in Resources */ = {isa = PBXBuildFile; fileRef = DE5E95071ABE72610058790F /* checkboxbw.png */; };
 		DE7E567F19E3235800C4EF2D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE7E567E19E3235800C4EF2D /* Foundation.framework */; };
 		DE7E568119E3235800C4EF2D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE7E568019E3235800C4EF2D /* CoreGraphics.framework */; };
 		DE7E568319E3235800C4EF2D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE7E568219E3235800C4EF2D /* UIKit.framework */; };
@@ -58,7 +57,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		DE04574F1A35733D00D83525 /* aid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = aid.png; sourceTree = "<group>"; };
 		DE0457631A3574C300D83525 /* Icon-76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-76.png"; sourceTree = "<group>"; };
 		DE0457671A35777700D83525 /* Icon-76@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-76@2x.png"; sourceTree = "<group>"; };
 		DE25BA661A12ADED0028194E /* bringWater.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bringWater.png; sourceTree = "<group>"; };
@@ -69,7 +67,6 @@
 		DE39035D1A1F0B3B0011D891 /* emergency.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emergency.png; sourceTree = "<group>"; };
 		DE3973711A164233005105B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		DE3973731A16D90E005105B8 /* redx.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redx.png; sourceTree = "<group>"; };
-		DE3973751A16DF84005105B8 /* videochat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = videochat.png; sourceTree = "<group>"; };
 		DE3973771A16E4F5005105B8 /* hourglass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hourglass.png; sourceTree = "<group>"; };
 		DE3973821A16F857005105B8 /* SendTextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SendTextViewController.h; sourceTree = "<group>"; };
 		DE3973831A16F85F005105B8 /* SendTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SendTextViewController.m; sourceTree = "<group>"; };
@@ -90,6 +87,7 @@
 		DE5E94E01ABBA30C0058790F /* ResidentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResidentViewController.m; sourceTree = "<group>"; };
 		DE5E94E21ABBA38B0058790F /* RequestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestViewController.h; sourceTree = "<group>"; };
 		DE5E94E31ABBA38B0058790F /* RequestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestViewController.m; sourceTree = "<group>"; };
+		DE5E95071ABE72610058790F /* checkboxbw.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkboxbw.png; sourceTree = "<group>"; };
 		DE7E567B19E3235800C4EF2D /* InstaAid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaAid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE7E567E19E3235800C4EF2D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DE7E568019E3235800C4EF2D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -218,13 +216,12 @@
 		DE7E56CE19E743F500C4EF2D /* pics */ = {
 			isa = PBXGroup;
 			children = (
+				DE5E95071ABE72610058790F /* checkboxbw.png */,
 				DE0457631A3574C300D83525 /* Icon-76.png */,
-				DE0457671A35777700D83525 /* Icon-76@2x.png */,
-				DE04574F1A35733D00D83525 /* aid.png */,
 				DE356DC21A17FD4900DDA4B2 /* sendMessage.png */,
+				DE0457671A35777700D83525 /* Icon-76@2x.png */,
 				DE39035D1A1F0B3B0011D891 /* emergency.png */,
 				DE3973771A16E4F5005105B8 /* hourglass.png */,
-				DE3973751A16DF84005105B8 /* videochat.png */,
 				DE3973731A16D90E005105B8 /* redx.png */,
 				DE25BA741A1307A80028194E /* sendNurse.png */,
 				DE25BA661A12ADED0028194E /* bringWater.png */,
@@ -316,13 +313,11 @@
 			files = (
 				DE3973721A164233005105B8 /* Main_iPad.storyboard in Resources */,
 				DE7E569A19E3235800C4EF2D /* Images.xcassets in Resources */,
-				DE3973761A16DF84005105B8 /* videochat.png in Resources */,
 				DE25BA751A1307A80028194E /* sendNurse.png in Resources */,
 				DE0457681A35777700D83525 /* Icon-76@2x.png in Resources */,
 				DE25BA671A12ADED0028194E /* bringWater.png in Resources */,
 				DE39035E1A1F0B3B0011D891 /* emergency.png in Resources */,
 				DE3973781A16E4F5005105B8 /* hourglass.png in Resources */,
-				DE0457591A35733E00D83525 /* aid.png in Resources */,
 				DE0457641A3574C300D83525 /* Icon-76.png in Resources */,
 				DE3973741A16D90E005105B8 /* redx.png in Resources */,
 				DE7E569219E3235800C4EF2D /* Main_iPhone.storyboard in Resources */,
@@ -330,6 +325,7 @@
 				DE25BA731A1307A00028194E /* sendAid.png in Resources */,
 				DE25BA6D1A1307730028194E /* video.png in Resources */,
 				DE356DC31A17FD4900DDA4B2 /* sendMessage.png in Resources */,
+				DE5E95081ABE72610058790F /* checkboxbw.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

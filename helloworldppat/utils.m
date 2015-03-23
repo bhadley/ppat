@@ -22,10 +22,10 @@ The application stores information in firebase, for communication between
  resident side and nurse side. For developmental purposes, use "tbhdev". For deployment, use "thebostonhome".
 */
 
-NSString * const FB_LOG = @"https://tbhdev.firebaseio.com/log";
-NSString * const FB_REQUESTS = @"https://tbhdev.firebaseio.com/requests";
-NSString * const FB_USERS = @"https://tbhdev.firebaseio.com/users";
-NSString * const FB_PROCESSED = @"https://tbhdev.firebaseio.com/processed";
+NSString * FB_LOG = @"https://tbhdev.firebaseio.com/log";
+NSString * FB_REQUESTS = @"https://tbhdev.firebaseio.com/requests";
+NSString * FB_USERS = @"https://tbhdev.firebaseio.com/users";
+NSString * FB_PROCESSED = @"https://tbhdev.firebaseio.com/processed";
 
 
 /* the floor toggle variable specifies which requests should be received based

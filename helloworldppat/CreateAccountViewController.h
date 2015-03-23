@@ -12,4 +12,5 @@
 -(IBAction)createAccount:(id)sender;
 @property (weak, nonatomic) IBOutlet UITextView *username;
 @property (weak, nonatomic) IBOutlet UITextView *roomNumber;
+@property (weak, nonatomic) IBOutlet UITextView *loginCode;
 @end

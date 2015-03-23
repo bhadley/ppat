@@ -57,7 +57,9 @@ bool anyRequestsNotProcessed(){
  */
 void playNotificationSound()
 {
+    
     if (anyRequestsNotProcessed() == true) {
+        NSLog(@"PLAY SOUND");
         soundID = normalSoundID;
         if ([textRequests containsObject:@"EMERGENCY!! Send help immediately!!!"] == true){
             soundID = emergencySoundID;
@@ -85,7 +87,7 @@ void playNotificationSound()
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     // Create the triple tap gesure listener
     UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc]
                                              initWithTarget:self action:@selector(respondToTripleTap:)];
@@ -240,16 +242,8 @@ void playNotificationSound()
 {
     NSURL *scriptUrl = [NSURL URLWithString:@"http://www.google.com"];
     NSData *data = [NSData dataWithContentsOfURL:scriptUrl];
-    if (data) {
-        NSLog(@"Device is connected to the internet");
-    }
-    else {
-        NSLog(@"Device is not connected to the internet");
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"No network connection"
-                                                        message:@"You must be connected to the internet to use this app."
-                                                       delegate:nil
-                                              cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil];
+    if (!data) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"No network connection" message:@"You must be connected to the internet to use this app." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alert show];
     }
 }

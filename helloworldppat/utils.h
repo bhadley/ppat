@@ -11,10 +11,10 @@
 +(void)sendRequestForUser:(NSString*)userID withRequest:(NSString*)request;
 +(NSString*)getTimeStamp;
 
-extern NSString * const FB_LOG;
-extern NSString * const FB_REQUESTS;
-extern NSString * const FB_USERS;
-extern NSString * const FB_PROCESSED;
+extern NSString *  FB_LOG;
+extern NSString *  FB_REQUESTS;
+extern NSString *  FB_USERS;
+extern NSString *  FB_PROCESSED;
 
 extern NSInteger nurseFloorToggle;
 @end
