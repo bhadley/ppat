@@ -43,7 +43,7 @@ NSInteger nurseFloorToggle = 0;
 +(NSString*)getTimeStamp {
     NSDate *currentTime = [NSDate date];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"YYYY-MM-dd hh:mm:ss"];
+    [dateFormatter setDateFormat:@"YYYY-MM-dd HH:mm:ss"];
     NSString *resultString = [dateFormatter stringFromDate: currentTime];
     return resultString;
 }

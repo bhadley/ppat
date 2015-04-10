@@ -58,7 +58,20 @@
     
     // Add the tap gesture recognizer to the view
     [self.view addGestureRecognizer:tapRecognizer];
-    
+    /*
+    NSDictionary *textAttributes = [NSDictionary dictionaryWithObjectsAndKeys:[UIFont boldSystemFontOfSize:40], UITextAttributeFont, nil];
+    [_floorToggle setTitleTextAttributes:textAttributes forState:UIControlStateNormal];
+    */
+
 }
+
+/*
+-(void) viewDidLayoutSubviews
+{
+    CGRect frame= _floorToggle.frame;
+    [_floorToggle setFrame:CGRectMake(frame.origin.x, frame.origin.y, frame.size.width, 100)];
+}
+ */
+
 
 @end

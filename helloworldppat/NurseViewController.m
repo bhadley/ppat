@@ -59,7 +59,6 @@ void playNotificationSound()
 {
     
     if (anyRequestsNotProcessed() == true) {
-        NSLog(@"PLAY SOUND");
         soundID = normalSoundID;
         if ([textRequests containsObject:@"EMERGENCY!! Send help immediately!!!"] == true){
             soundID = emergencySoundID;
@@ -115,17 +114,26 @@ void playNotificationSound()
     // FOR EACH USER IN FIREBASE USERS
     [FIREBASE_USERS observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
         for (FDataSnapshot* childSnap in snapshot.children) {
-            [self.namesFB addObject:childSnap.value[@"name"]];
-            [self.roomsFB addObject:childSnap.value[@"room"]];
+            if (childSnap.value[@"name"] != nil){
+                [self.namesFB addObject:childSnap.value[@"name"]];
+                [self.roomsFB addObject:childSnap.value[@"room"]];
+            }
+            else {
+                NSLog(@"Null object in users");
+            }
         }
+    } withCancelBlock:^(NSError *error) {
+        NSLog(@"%@", error.description);
     }];
     
+    /*
     // IF USER ROOM NUMBER CHANGES IN FIREBASE, UPDATE INTERNAL VARIABLES
     [FIREBASE_USERS observeEventType:FEventTypeChildChanged withBlock:^(FDataSnapshot *snapshot) {
         NSString *userName = snapshot.value[@"name"];
         NSInteger indexIntoArray = [self.namesFB indexOfObject:userName];
         [self.roomsFB replaceObjectAtIndex:indexIntoArray withObject:snapshot.value[@"room"] ];
     }];
+    */
     
     // REQUEST ADDED TO FIREBASE PROCESSED LIST
     Firebase *FIREBASE_PROCESSED = [[Firebase alloc] initWithUrl:FB_PROCESSED];
