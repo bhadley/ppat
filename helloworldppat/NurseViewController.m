@@ -98,6 +98,8 @@ void playNotificationSound()
     NSTimer* myTimer = [NSTimer scheduledTimerWithTimeInterval: 60 target: self
         selector: @selector(checkWifiStatus:) userInfo: nil repeats: YES];
    
+    NSTimer* firebaseHeartbeatTimer = [NSTimer scheduledTimerWithTimeInterval: 300 target: self
+                                                      selector: @selector(sendFirebaseHeartbeat:) userInfo: nil repeats: YES];
     
     // create local storage dictionaries for data displayed in cells
     // this data is read from and written to firebase
@@ -254,6 +256,18 @@ void playNotificationSound()
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"No network connection" message:@"You must be connected to the internet to use this app." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alert show];
     }
+}
+
+
+-(void) sendFirebaseHeartbeat:(NSTimer*) t
+{
+    // log that the request was cancelled by nurse
+    Firebase *fbRequestLog = [[Firebase alloc] initWithUrl:FB_NURSE_IPAD_HEARTBEAT];
+    NSDictionary *post = @{[[[UIDevice currentDevice] identifierForVendor] UUIDString]:[NSString stringWithFormat:@"%@ %@ %@", [utils getTimeStamp], @"Floor(s):", [@(nurseFloorToggle) stringValue]]
+                           };
+    //Firebase *postRef = [fbRequestLog childByAutoId];
+    [fbRequestLog setValue: post];
+    //[postRef setValue: post];
 }
 
 @end

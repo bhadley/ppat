@@ -26,7 +26,7 @@ NSString * FB_LOG = @"https://bostonhome.firebaseio.com/log";
 NSString * FB_REQUESTS = @"https://bostonhome.firebaseio.com/requests";
 NSString * FB_USERS = @"https://bostonhome.firebaseio.com/users";
 NSString * FB_PROCESSED = @"https://bostonhome.firebaseio.com/processed";
-
+NSString * FB_NURSE_IPAD_HEARTBEAT = @"https://bostonhome.firebaseio.com/nurseIpadHeartbeat";
 
 /* the floor toggle variable specifies which requests should be received based
     on the resident's floor.

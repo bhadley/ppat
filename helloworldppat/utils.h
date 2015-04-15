@@ -15,6 +15,6 @@ extern NSString *  FB_LOG;
 extern NSString *  FB_REQUESTS;
 extern NSString *  FB_USERS;
 extern NSString *  FB_PROCESSED;
-
+extern NSString *  FB_NURSE_IPAD_HEARTBEAT;
 extern NSInteger nurseFloorToggle;
 @end
