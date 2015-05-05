@@ -69,6 +69,14 @@
 /*
  If user closes keyboard, they can still send the request
  */
+- (IBAction)cancel:(id)sender {
+    UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"ResidentView"];
+    
+    [self presentViewController:vc animated:NO completion:nil];
+}
+/*
+ If user closes keyboard, they can still send the request
+ */
 - (IBAction)sendRequest:(id)sender {
     [self.requestTxtMsg resignFirstResponder];
     NSString *username = [[NSUserDefaults standardUserDefaults] stringForKey:@"Username"];

@@ -72,7 +72,7 @@
 
 - (IBAction)videoChat:(id)sender {
     // set up a facetime with the nurse's ipad, using appleid thebostonhome@mit.edu
-    NSURL *url = [NSURL URLWithString:@"facetime://thebostonhome@mit.edu"];
+    NSURL *url = [NSURL URLWithString:@"facetime://ppat-teammargaret@mit.edu"];
     [[UIApplication sharedApplication] openURL:url];
     
     // log video chat instance

@@ -11,5 +11,6 @@
 
 @property (weak, nonatomic) IBOutlet UITextView *requestTxtMsg;
 - (IBAction)sendRequest:(id)sender;
+- (IBAction)cancel:(id)sender;
 
 @end
