@@ -265,9 +265,8 @@ void playNotificationSound()
     Firebase *fbRequestLog = [[Firebase alloc] initWithUrl:FB_NURSE_IPAD_HEARTBEAT];
     NSDictionary *post = @{[[[UIDevice currentDevice] identifierForVendor] UUIDString]:[NSString stringWithFormat:@"%@ %@ %@", [utils getTimeStamp], @"Floor(s):", [@(nurseFloorToggle) stringValue]]
                            };
-    //Firebase *postRef = [fbRequestLog childByAutoId];
     [fbRequestLog setValue: post];
-    //[postRef setValue: post];
+
 }
 
 @end

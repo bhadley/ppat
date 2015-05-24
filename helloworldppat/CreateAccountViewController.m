@@ -40,9 +40,13 @@
     NSURL *scriptUrl = [NSURL URLWithString:@"http://www.google.com"];
     NSData *data = [NSData dataWithContentsOfURL:scriptUrl];
     if (data) {
-        if ([_loginCode.text  isEqual: @"tbh"]) {
-            Firebase *myRootRef = [[Firebase alloc] initWithUrl:FB_USERS];
         
+        if ([utils loginCodeValid:_loginCode.text]) {
+            
+            [utils instantiateFBVars:_loginCode.text];
+
+            Firebase *myRootRef = [[Firebase alloc] initWithUrl:FB_USERS];
+            
             // Create a new user in firebase
             NSDictionary *post1 = @{
                                 @"name":_username.text,

@@ -21,12 +21,16 @@
 The application stores information in firebase, for communication between
  resident side and nurse side. For developmental purposes, use "tbhdev". For deployment, use "thebostonhome".
 */
+;
+NSString * FB_IDSTRING;
 
-NSString * FB_LOG = @"https://tbhdev.firebaseio.com/log";
-NSString * FB_REQUESTS = @"https://tbhdev.firebaseio.com/requests";
-NSString * FB_USERS = @"https://tbhdev.firebaseio.com/users";
-NSString * FB_PROCESSED = @"https://tbhdev.firebaseio.com/processed";
-NSString * FB_NURSE_IPAD_HEARTBEAT = @"https://tbhdev.firebaseio.com/nurseIpadHeartbeat";
+NSString * FB_LOG;// = @"https://tbhdev.firebaseio.com/";
+NSString * FB_REQUESTS;// = @"https://tbhdev.firebaseio.com/requests";
+NSString * FB_USERS;// = @"https://tbhdev.firebaseio.com/users";
+NSString * FB_PROCESSED;// = @"https://tbhdev.firebaseio.com/processed";
+NSString * FB_NURSE_IPAD_HEARTBEAT;// = @"https://tbhdev.firebaseio.com/nurseIpadHeartbeat";
+
+NSString * FACETIME_APPLEID;
 
 /* the floor toggle variable specifies which requests should be received based
     on the resident's floor.
@@ -47,6 +51,33 @@ NSInteger nurseFloorToggle = 0;
     NSString *resultString = [dateFormatter stringFromDate: currentTime];
     return resultString;
 }
+
++(bool)loginCodeValid:(NSString*)loginCode{
+    return ([loginCode  isEqual: @"tbh"] || [loginCode  isEqual: @"dev"] || [loginCode  isEqual: @"demo"]);
+}
+
++(void)instantiateFBVars:(NSString*)loginCode{
+    if ([loginCode  isEqual: @"tbh"]) {
+        FB_IDSTRING = @"bostonhome";
+        FACETIME_APPLEID = @"facetime://thebostonhome@mit.edu";
+    } else if ([loginCode  isEqual: @"dev"]) {
+        FB_IDSTRING = @"tbhdev";
+        FACETIME_APPLEID = @"facetime://ppat-teammargaret@mit.edu";
+    } else if ([loginCode  isEqual: @"demo"]) {
+        FB_IDSTRING = @"demoinstaaid";
+        FACETIME_APPLEID = @"facetime://ppat-teammargaret@mit.edu";
+
+    }
+
+    
+    FB_LOG = [NSString stringWithFormat: @"https://%@.firebaseio.com/log", FB_IDSTRING];
+    FB_REQUESTS = [NSString stringWithFormat: @"https://%@.firebaseio.com/requests", FB_IDSTRING];
+    FB_USERS = [NSString stringWithFormat: @"https://%@.firebaseio.com/users", FB_IDSTRING];
+    FB_PROCESSED = [NSString stringWithFormat: @"https://%@.firebaseio.com/processed", FB_IDSTRING];
+    FB_NURSE_IPAD_HEARTBEAT = [NSString stringWithFormat: @"https://%@.firebaseio.com/nurseIpadHeartbeat", FB_IDSTRING];
+    
+}
+
 
 /*
  Send resident's request to firebase, and create an entry in the firebase

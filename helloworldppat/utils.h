@@ -10,6 +10,11 @@
 
 +(void)sendRequestForUser:(NSString*)userID withRequest:(NSString*)request;
 +(NSString*)getTimeStamp;
++(void)instantiateFBVars:(NSString*)loginCode;
++(bool)loginCodeValid:(NSString*)loginCode;
+    
+extern NSString *  FB_IDSTRING;
+extern NSString *  FACETIME_APPLEID;
 
 extern NSString *  FB_LOG;
 extern NSString *  FB_REQUESTS;

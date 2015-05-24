@@ -18,9 +18,12 @@
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main_iPad" bundle:nil];
     UIViewController *vc;
     
-    if([username  isEqual: @"Nurse"] && [loginCode  isEqual: @"tbh"]) {
+    
+    if([username  isEqual: @"Nurse"] && [utils loginCodeValid:loginCode]) {
+        [utils instantiateFBVars:loginCode];
         vc = [sb instantiateViewControllerWithIdentifier:@"NurseView"];
-    } else if ( (username != nil) && [loginCode  isEqual: @"tbh"] ) {
+    } else if ( (username != nil) && [utils loginCodeValid:loginCode] ) {
+        [utils instantiateFBVars:loginCode];
         vc = [sb instantiateViewControllerWithIdentifier:@"ResidentView"];
     } else {
         vc = [sb instantiateViewControllerWithIdentifier:@"CreateAccountView"];
